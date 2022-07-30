@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -28,14 +27,6 @@ yarn-error.log*
 # Logs
 logs
 *.log
-=======
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
->>>>>>> c11b19a78cc390053d6052e354ede31f5a4fb929
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -51,10 +42,6 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-<<<<<<< HEAD
-=======
-coverage
->>>>>>> c11b19a78cc390053d6052e354ede31f5a4fb929
 *.lcov
 
 # nyc test coverage
@@ -73,10 +60,6 @@ bower_components
 build/Release
 
 # Dependency directories
-<<<<<<< HEAD
-=======
-node_modules/
->>>>>>> c11b19a78cc390053d6052e354ede31f5a4fb929
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -106,13 +89,6 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-<<<<<<< HEAD
-=======
-# dotenv environment variables file
-.env
-.env.test
-
->>>>>>> c11b19a78cc390053d6052e354ede31f5a4fb929
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
@@ -142,8 +118,4 @@ dist
 .dynamodb/
 
 # TernJS port file
-<<<<<<< HEAD
 .tern-port
-=======
-.tern-port
->>>>>>> c11b19a78cc390053d6052e354ede31f5a4fb929

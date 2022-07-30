@@ -1,0 +1,22 @@
+@use '../vars' as *;
+
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	overflow-y: scroll;
+
+	color: $text-color;
+}
+
+body {
+	font-family: $poppins, $roboto, sans-serif;
+	font-size: $fz-16;
+	line-height: $lh-16;
+
+	color: inherit;
+	min-height: 100vh;
+}

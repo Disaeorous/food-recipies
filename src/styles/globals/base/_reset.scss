@@ -1,0 +1,50 @@
+@use '../vars/_colors' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/* MARGINS */
+body,
+h1, h2, h3, h4, h5, h6, p,
+hr, ul, ol,
+dd, dl,
+fieldset, blockquote, figure, pre, summary,
+input, button {
+  margin: 0;
+}
+
+/* PADDING */
+ul, ol,
+legend, fieldset,
+input, button, textarea, 
+select, 
+select > option,
+td, th {
+  padding: 0;
+}
+
+/* FORM TYPES */
+input, button, select, textarea,
+[type="file"]::-webkit-file-upload-button {
+  font: inherit;
+  font-size: 100%;
+
+  color: inherit;
+  background-color: transparent;
+
+  border: 1px solid $gray;
+  outline: none;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
