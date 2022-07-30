@@ -1,18 +1,11 @@
 import './styles/main.scss';
 
-function Button() {
-	return (
-		<>
-			<button type="button">Hello</button>
-		</>
-	)
-}
+import { Sheets as Pages } from './pages/Sheets';
 
 function App() {
   return (
     <>
-      <h1>Hello</h1>
-			<Button />
+			<Pages />
     </>
   );
 }
