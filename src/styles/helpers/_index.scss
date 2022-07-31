@@ -1,0 +1,43 @@
+@use "../globals/vars" as *;
+
+img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+.m-r-0 {
+	margin-right: 0;
+}
+
+.m-l-0 {
+	margin-left: 0;
+}
+
+.m-r-auto {
+	margin-right: auto;
+}
+
+.m-l-auto {
+	margin-left: auto;
+}
+
+.grid-row-1 {
+	grid-row: 1/2;
+}
+
+.grid-row-2 {
+	grid-row: 2/3;
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+.backdrop {
+	background-color: rgba(0, 0, 0, 0.2);
+}

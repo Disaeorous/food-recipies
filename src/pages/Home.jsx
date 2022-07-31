@@ -1,13 +1,11 @@
 import React from 'react';
 
-import Popular from '../components/Popular';
-import Veggie from '../components/Veggie';
+import Dishes from '../components/Dishes';
 
 function Home() {
 	return (
 		<>
-			<Popular />
-			<Veggie />
+			<Dishes />
 		</>
 	)
 }

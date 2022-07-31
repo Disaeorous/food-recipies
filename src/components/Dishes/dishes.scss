@@ -1,0 +1,17 @@
+@use "../../styles/globals/vars" as *;
+
+.recipies {
+	& > * + * {
+		margin-top: .6rem;
+	}
+
+	& h2 {
+		color: $accent;
+	}
+}
+
+.dishes {
+	display: grid;
+	gap: 2.4rem;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}

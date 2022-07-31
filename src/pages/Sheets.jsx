@@ -1,11 +1,12 @@
 import React from 'react';
 
+import '../styles/main.scss';
 import Home from './Home';
 
 export const Sheets = () => {
 	return (
-		<div>
+		<main className="main">
 			<Home />
-		</div>
+		</main>
 	)
 }
