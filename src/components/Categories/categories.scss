@@ -1,0 +1,47 @@
+@use "../../styles/globals/vars" as *;
+
+.categories {
+
+	&-list {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-item {
+
+		&:not(:last-of-type) {
+			margin-right: 2.4rem;
+		}
+	}
+
+	&-link {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+
+		gap: .4rem; 
+		padding: .6em;
+		border: 1px solid $gray;
+		border-radius: .6em;
+		
+		color: $text-color;
+		background-color: antiquewhite;
+
+		& > span {
+			transition: color .15s ease-in-out;
+		}
+		& > svg {
+			fill: $text-color;
+			transition: fill .15s ease-in-out;
+		}
+
+		&:hover > span {
+			color: $accent;
+		}
+		&:hover > svg {
+			fill: $accent;
+		}
+	}
+}

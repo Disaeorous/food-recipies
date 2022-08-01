@@ -1,5 +1,4 @@
 import React from 'react'
-
 import './recipieCard.scss'
 
 function RecipieCard( {image, title} ) {
