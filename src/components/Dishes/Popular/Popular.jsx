@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import Carousel from '../../Carousel';
+import PropTypes from 'prop-types';
+import { fetchRecipes } from '../../../services/fetchRecipes';
 
 function Popular( {title='Popular'} ) {
 	
@@ -11,23 +13,18 @@ function Popular( {title='Popular'} ) {
 	}, []);
 
 	const getPopular = async () => {
-		const api = 'https://api.spoonacular.com/recipes/random';
-		const LIMIT = 9
-
 		const check = localStorage.getItem('popular');
 		
 		try {
 			if (check) {
 				setPopular(JSON.parse(check));
 			} else {
-				const fetchAPI = await fetch(`${api}?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&number=${LIMIT}`);
-				const data = await fetchAPI.json();
-				console.log(data);
-	
-				setPopular(data.recipes);
+				const dataRecipe = await fetchRecipes('random', 8, 'dessert');
+				setPopular(dataRecipe);
 
-				localStorage.setItem("popular", JSON.stringify(data.recipes));
-				return data;
+				localStorage.setItem("popular", JSON.stringify(dataRecipe));
+
+				return dataRecipe;
 			}
 		} catch (error) {
 			console.log(error)
@@ -38,10 +35,14 @@ function Popular( {title='Popular'} ) {
 		<article className='recipies grid-row-1'>
 			<h2>{title} recipies</h2>
 			{ 
-				Carousel(popular, 4, 2) 
+				Carousel(popular, 4, 2, true) 
 			}
 		</article>
 	)
+}
+
+Popular.propTypes = {
+	title: PropTypes.string,
 }
 
 export default Popular

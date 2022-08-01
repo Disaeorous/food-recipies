@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 import Carousel from '../../Carousel';
+import PropTypes from 'prop-types';
+import { fetchRecipes } from '../../../services/fetchRecipes';
 
 function Veggie( {title='Vegetarian'} ) {
 
@@ -11,24 +13,18 @@ function Veggie( {title='Vegetarian'} ) {
 	}, []);
 
 	const getVeggie = async () => {
-		const api = 'https://api.spoonacular.com/recipes/random';
-		const apiTag = 'vegetarian'
-		const LIMIT = 9
-
 		const check = localStorage.getItem('veggie');
 		
 		try {
 			if (check) {
 				setVeggie(JSON.parse(check));
 			} else {
-				const fetchAPI = await fetch(`${api}?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&number=${LIMIT}&tags=${apiTag}`);
-				const data = await fetchAPI.json();
-				console.log(data);
-	
-				setVeggie(data.recipes);
+				const dataRecipe = await fetchRecipes('random', 9, 'vegetarian');
+				setVeggie(dataRecipe);
 
-				localStorage.setItem("veggie", JSON.stringify(data.recipes));
-				return data;
+				localStorage.setItem("veggie", JSON.stringify(dataRecipe));
+				
+				return dataRecipe;
 			}
 		} catch (error) {
 			console.log(error)
@@ -43,6 +39,10 @@ function Veggie( {title='Vegetarian'} ) {
 			}
 		</article>
 	)
+}
+
+Veggie.propTypes = {
+	title: PropTypes.string,
 }
 
 export default Veggie
