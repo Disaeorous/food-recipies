@@ -7,8 +7,16 @@
 	align-items: center;
 	justify-items: center;
 	
-	min-height: 100vh;
 	width: 100%;
 	grid-template-columns: minmax(250px, 1fr);
 	gap: 4rem;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+
+	& > * + * {
+		margin-top: 3rem;
+	}
 }
