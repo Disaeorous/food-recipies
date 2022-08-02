@@ -37,11 +37,18 @@
 			transition: fill .15s ease-in-out;
 		}
 
-		&:hover > span {
+		&:hover > span,
+		&.active > span {
 			color: $accent;
 		}
-		&:hover > svg {
+		&:hover > svg,
+		&.active > svg {
 			fill: $accent;
+		}
+
+		&.active {
+			box-shadow: 2px 4px 15px 0px rgba(18,101,226,0.37);
+			border-color: $accent;
 		}
 	}
 }

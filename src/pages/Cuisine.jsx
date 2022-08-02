@@ -8,6 +8,7 @@ import RecipieCard from '../components/Card/RecipieCard';
 function Cuisine() {
 
 	const [cuisine, setCuisine] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	let params = useParams();
 
@@ -19,7 +20,16 @@ function Cuisine() {
 
 	const getCuisine = async (name) => {
 		const dataCuisine = await fetchCuisine('complexSearch', name);
-		setCuisine(dataCuisine);
+		
+		setCuisine(dataCuisine.results);
+		setLoading(false);
+
+		if (!dataCuisine.totalResults > 0) {
+			console.log('There is no cuisine. Choose another.')
+			// setCuisine(null);
+		}
+
+		return dataCuisine.results;
 	}
 
 	return (
@@ -29,12 +39,17 @@ function Cuisine() {
 				<Categories />
 			</div>
 			
-			{ cuisine.map((item) => {
-				return (
-					<RecipieCard key={item.id} title={item.title} image={item.image} />
-				)
-			}) }
+			{/* { cuisine == null && <h3>There is no cuisine. Choose another.</h3> } */}
 
+			<section className='grid'>
+				{ loading 
+				? <h1>Loading</h1>
+				: cuisine.map((item) => {
+					return (
+						<RecipieCard key={item.id} title={item.title} image={item.image} />
+					)
+				}) }
+			</section>
 		</>
 	)
 }

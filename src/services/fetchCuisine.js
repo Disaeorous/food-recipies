@@ -10,5 +10,5 @@ export const fetchCuisine = async (NAME=API_GET_NAME, CUISINE) => {
 	const fetchData = await fetchAPI.json();
 	console.log(fetchData);
 
-	return fetchData.results;
+	return fetchData;
 }
