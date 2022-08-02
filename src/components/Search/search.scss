@@ -1,0 +1,48 @@
+@use "../../styles/globals/vars/" as *;
+
+.search {
+
+	&-input {
+		width: 100%;
+		border-radius: 0.4em;
+    padding: 0.4em 0.8em;
+
+    color: $text-color;
+		background-color: antiquewhite;
+
+		transition: 
+			border-color .15s ease-out,
+			box-shadow .15s ease-out;
+
+		&:focus {
+			border-color: $accent;
+			box-shadow: 2px 4px 10px 0px rgba(18,101,226,0.27);
+		}
+	}
+
+	&-form {
+		position: relative;
+		display: flex;
+    align-items: center;
+
+		width: 37rem;
+		margin: 0 auto;
+	}
+
+	&-label {
+		position: absolute;
+
+    display: flex;
+    right: 0.8rem;
+  
+    cursor: pointer;
+    padding: 0.6rem;
+	}
+
+	&-categories {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+}

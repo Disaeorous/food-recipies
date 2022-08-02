@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Categories from '../components/Categories';
 
 import { Link, useParams } from 'react-router-dom';
 import { fetchCuisine } from '../services/fetchCuisine';
@@ -34,10 +33,6 @@ function Cuisine() {
 
 	return (
 		<>
-			<div>
-				<h1>Cuisine Component</h1>
-				<Categories />
-			</div>
 			
 			{/* { cuisine == null && <h3>There is no cuisine. Choose another.</h3> } */}
 
