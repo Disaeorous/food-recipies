@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { fetchRecipes } from '../../../services/fetchRecipes';
 
 import Carousel from '../../Carousel';
 import PropTypes from 'prop-types';
-import { fetchRecipes } from '../../../services/fetchRecipes';
 
 function Popular( {title='Popular'} ) {
 	
