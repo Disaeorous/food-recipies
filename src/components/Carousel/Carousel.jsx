@@ -45,7 +45,8 @@ function Carousel(item, perPage=3, perMove=3, rewind=false) {
 			{ item.map((recipe) => {
 				return (
 					<SplideSlide key={recipe.id}>
-						{ RecipieCard(recipe) }
+						{/* { RecipieCard(recipe) } */}
+						<RecipieCard id={recipe.id} title={recipe.title} image={recipe.image} />
 					</SplideSlide>
 				)
 			}) }

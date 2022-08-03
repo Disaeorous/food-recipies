@@ -1,0 +1,118 @@
+@use "../../styles/globals/vars" as *;
+
+.recipe {
+
+	&-details {
+		width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(34rem, 2fr));
+		gap: 5rem;
+
+		&__info {
+			width: 100%;
+
+			& > * + * {
+				margin-top: 1rem;
+			}
+
+			& > * span {
+				color: $accent;
+			}
+		}
+
+		&__title {
+			color: $accent;
+		}
+
+		&__type {
+			font-weight: 400;
+			font-size: $fz-16;
+			line-height: $lh-17;
+		}
+
+		&__summary {
+			margin-top: 2rem;
+
+			& > span {
+				font-size: $fz-22;
+				line-height: $lh-22;
+			}
+
+			& > p {
+				margin-top: .2rem;
+
+				& > a {
+					color: $text-blue;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&__instructions,
+		&__ingredients {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2rem;
+			margin-top: 2rem;
+
+			& > div {
+				width: 45%;
+				padding: .4em 1.2em;
+
+				display: flex;
+				flex-direction: column;
+
+				border: 1px solid $gray;
+
+				background-color: antiquewhite;
+				border-radius: .4em;
+			}
+
+			& > ol {
+				display: flex;
+				flex-direction: column;
+				gap: 1.2rem;
+			}
+
+			& > li {
+				color: $text-black;
+				font-size: $fz-17;
+				line-height: $lh-17;
+			}
+		}
+
+		&__img {
+			border-radius: .7em;
+			border: 1px solid rgb(179, 163, 142);
+			width: 35rem;
+
+			&--m {
+				width: calc(100% - 6.5rem);
+			}
+		}
+	}
+
+	&-cta {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		& > button {
+			cursor: pointer;
+			background-color: #fff;
+			color: $text-black;
+
+			border: 1px solid $gray;
+			border-radius: .4em;
+
+			padding: .4em .8em;
+			transition: all .15s ease-in-out;
+		}
+		& > button.active {
+			background-color: $text-color;
+			color: $accent;
+			border-color: $accent;
+			box-shadow: 2px 4px 15px 0px rgba(18,101,226,0.37);
+		}
+	}
+}
