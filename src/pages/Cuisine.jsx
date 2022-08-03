@@ -18,7 +18,7 @@ function Cuisine() {
 
 
 	const getCuisine = async (name) => {
-		const dataCuisine = await fetchCuisine('complexSearch', name);
+		const dataCuisine = await fetchCuisine('complexSearch', 'cuisine', name);
 		
 		setCuisine(dataCuisine.results);
 		setLoading(false);
@@ -41,7 +41,7 @@ function Cuisine() {
 				? <h1>Loading</h1>
 				: cuisine.map((item) => {
 					return (
-						<RecipieCard key={item.id} title={item.title} image={item.image} />
+						<RecipieCard key={item.id} id={item.id} title={item.title} image={item.image} />
 					)
 				}) }
 			</section>

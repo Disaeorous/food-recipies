@@ -4,6 +4,7 @@ import '../styles/main.scss';
 import Home from './Home';
 import Cuisine from './Cuisine';
 import Searched from './Searched';
+import Recipe from './Recipe';
 
 import { 
 	Routes,
@@ -17,6 +18,7 @@ export const Sheets = () => {
 				<Route path='/' element={ <Home /> } />
 				<Route path='/cuisine/:type' element={ <Cuisine /> } />
 				<Route path='/search/:search' element={ <Searched /> } />
+				<Route path='/recipe/:name' element={ <Recipe /> } />
 			</Routes>
 		</main>
 	)

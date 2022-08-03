@@ -1,12 +1,14 @@
 import React from 'react'
-import './recipieCard.scss'
+import './recipieCard.scss';
 
-function RecipieCard( {image, title} ) {
+import { Link } from 'react-router-dom';
+
+function RecipieCard( {id, image, title} ) {
 	return (
 		<article className='recipies-item'>
-			<a className='recipies-item__link' href='/'>
+			<Link className='recipies-item__link' to={'/recipe/' + id}>
 				<img className='recipies-img' src={image} alt={title} />
-			</a>
+			</Link>
 			<p className='recipies-title' >{title}</p>
 		</article>
 	)

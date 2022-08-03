@@ -36,7 +36,7 @@ function Searched() {
 					? <h1>Loading</h1>
 					: searchedRecipe.map((item) => {
 						return (
-							<RecipieCard key={item.id} title={item.title} image={item.image} />
+							<RecipieCard key={item.id} id={item.id} title={item.title} image={item.image} />
 						)
 					}) }
 				</section>
