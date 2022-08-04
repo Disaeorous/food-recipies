@@ -16,7 +16,7 @@ function Recipe() {
 		const fetchData = await fetchDetails(params.name);
 		setDetail(fetchData);
 	} 
-
+	
 	useEffect(() => {
 		recipeData();
 	}, [params.name]);
@@ -28,9 +28,17 @@ function Recipe() {
 				<img className='recipe-details__img  recipe-details__img--m' src={detail.image} alt={detail.title} />
 				
 				<div className='recipe-details__info--secondary'>
-					<h3 className='recipe-details__type'>Dish types: <span>{detail.dishTypes}</span></h3>
+					<h3 className='recipe-details__type'>Dish types: 
+						{ detail.dishTypes && detail.dishTypes.map((item, index) => 
+							<span key={index}>{`${index ? ',' : ''} ${item}`}</span>
+						) }
+					</h3>
 					<p className='recipe-details__healthScore'>Health Score: <span>{detail.healthScore}</span></p>
-					<p className='recipe-details__cuisine'>Cuisines: <span>{detail.cuisines}</span></p>
+					<p className='recipe-details__cuisine'>Cuisines: 
+						{ detail.dishTypes && detail.cuisines.map((item, index) => 
+							<span key={index}>{`${index ? ',' : ''} ${item}`}</span>
+						) }
+					</p>
 					<div className='recipe-details__summary'>
 						<span>Summary</span>
 						<p dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(detail.summary)} }></p>
