@@ -6,7 +6,7 @@ import '@splidejs/react-splide/css/skyblue';
 import './carousel.scss'
 import RecipieCard from '../Card';
 
-function Carousel(item, perPage=3, perMove=3, rewind=false) {
+function Carousel( {item, perPage=3, perMove=3, rewind=false} ) {
 
 	const splideOptions = {
 		perPage,
@@ -45,7 +45,6 @@ function Carousel(item, perPage=3, perMove=3, rewind=false) {
 			{ item.map((recipe) => {
 				return (
 					<SplideSlide key={recipe.id}>
-						{/* { RecipieCard(recipe) } */}
 						<RecipieCard id={recipe.id} title={recipe.title} image={recipe.image} />
 					</SplideSlide>
 				)

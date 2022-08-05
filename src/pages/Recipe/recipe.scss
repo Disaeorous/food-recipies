@@ -15,6 +15,13 @@
 				margin-top: 1rem;
 			}
 
+			&--secondary {
+				& h3 > span,
+				& p > span {
+					margin-left: .5rem;
+				}
+			}
+
 			& > * span {
 				color: $accent;
 			}
@@ -28,6 +35,8 @@
 			font-weight: 400;
 			font-size: $fz-16;
 			line-height: $lh-17;
+			// display: flex;
+			// flex-wrap: wrap;
 		}
 
 		&__summary {

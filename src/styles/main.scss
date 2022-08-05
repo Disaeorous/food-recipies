@@ -20,3 +20,40 @@
 		margin-top: 3rem;
 	}
 }
+
+.logo {
+	border: 1px solid $gray;
+	border-radius: .4em;
+	padding: .4em .8em;
+
+	display: flex;
+	align-items: center;
+	gap: .6rem;
+
+	width: fit-content;
+	transition: all .15s ease-in;
+
+	&:hover {
+		background-color: #222;
+		border-color: hsl(18deg, 87%, 51%);
+    box-shadow: 2px 4px 15px 0px rgb(18 101 226 / 37%);
+
+		& span {
+			color: $text-red;
+		}
+		& svg {
+			fill: $text-red;
+		}
+	}
+
+	&-brand {
+		font-size: $fz-18;
+		line-height: $lh-18;
+
+		color: $accent;
+		transition: color .15s ease-in;
+	}
+	&-img {
+		transition: fill .15s ease-in;
+	}
+}
