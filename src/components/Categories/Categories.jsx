@@ -37,7 +37,7 @@ function Categories() {
 					</li>
 
 					<li className='categories-item'>
-						<NavLink className='categories-link' to={"/cuisine/Frenchh"}>
+						<NavLink className='categories-link' to={"/cuisine/French"}>
 							<span>French</span>
 							<GiCroissant />
 						</NavLink>

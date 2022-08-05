@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 function Veggie( {title='Vegetarian'} ) {
 
 	const [veggie, setVeggie] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		getVeggie();
@@ -16,6 +17,8 @@ function Veggie( {title='Vegetarian'} ) {
 		const check = localStorage.getItem('veggie');
 		
 		try {
+			setLoading(true);
+
 			if (check) {
 				setVeggie(JSON.parse(check));
 			} else {
@@ -23,19 +26,28 @@ function Veggie( {title='Vegetarian'} ) {
 				setVeggie(dataRecipe);
 
 				localStorage.setItem("veggie", JSON.stringify(dataRecipe));
+				setLoading(false);
 				
 				return dataRecipe;
 			}
 		} catch (error) {
-			console.log(error)
+			console.error(error);
+			setLoading(false);
 		}
 	}
 
 	return (
 		<article className='recipies grid-row-2'>
 			<h2>{title} recipies</h2>
-			{ 
-				Carousel(veggie, 3, 2, true) 
+			{/* { !loading && <h1>Loading</h1> } */}
+
+			{ loading ? 
+				<Carousel
+					item={veggie}
+					perPage={4}
+					perMove={2}
+					rewind={true} />
+				: <h1>Loading</h1> 
 			}
 		</article>
 	)
