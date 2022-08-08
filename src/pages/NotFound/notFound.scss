@@ -1,10 +1,3 @@
-@use "../../styles/globals/vars" as *;
-
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato');
-
-$big: 'Abril Fatface', serif;
-$body: 'Lato', sans-serif;
-
 .not-found {
 	display: flex;
 	align-items: center;
@@ -34,8 +27,8 @@ $body: 'Lato', sans-serif;
   top: 10%;
   position: absolute;
   border-radius: 50% 50% 0 0;
-  background: $white;
-  border: 1px solid $gray;
+  background: var(--white-dop);
+  border: 1px solid var(--gray-border);
   border-bottom: none;
   animation: float 2s ease-out infinite;
 }
@@ -47,8 +40,8 @@ $body: 'Lato', sans-serif;
   top: 10%;
   position: absolute;
   border-radius: 50% 50% 0 0;
-  background: $white;
-  border: 1px solid $gray;
+	background: var(--white-dop);
+  border: 1px solid var(--gray-border);
   border-bottom: none;
   animation: float 2s ease-out infinite;
   z-index: 0;
@@ -63,7 +56,7 @@ $body: 'Lato', sans-serif;
 }
 .eye, .eye-right {
   position: absolute;
-  background: $dark;
+  background: var(--black-dop);
   width: 13px;
   height: 13px;
   border-radius: 50%;
@@ -85,17 +78,17 @@ $body: 'Lato', sans-serif;
   height: 10px;
   border: 3px solid;
   border-radius: 50%;
-  border-color: transparent $dark $dark transparent;
+  border-color: transparent var(--black-border) var(--black-border) transparent;
   transform: rotate(45deg);
 }
 
 .one, .two, .three, .four {
   position: absolute;
-  background: $white;
+  background: var(--white-dop);
   top: 85%;
   width: 25%;
   height: 23%;
-  border: 1px solid $gray;
+  border: 1px solid var(--gray-border);
   z-index: 0;
 }
 
@@ -123,7 +116,7 @@ $body: 'Lato', sans-serif;
   position: absolute;
   width: 30%;
   height: 7%;
-  background: $gray;
+  background: var(--gray-bg);
   left: 35%;
   top: 80%;
   border-radius: 50%;
@@ -150,14 +143,13 @@ $body: 'Lato', sans-serif;
 
 .bottom {
   margin-top: 10px;
-
 	& > p {
-  text-align: center;
-  font-family: $body;
-  color: $dark;
-  font-size: .6em;
-  margin-top: -20px;
-  text-transform: uppercase;
+		text-align: center;
+		font-family: var(--lato), sans-serif;
+		color: var(--black-dop);
+		font-size: .6em;
+		margin-top: -20px;
+		text-transform: uppercase;
 	}
 }
 
@@ -165,19 +157,19 @@ $body: 'Lato', sans-serif;
 .not-found__top {
 	
 	& > h1 {
-		font-family: $big;
-		color: $white;
+		font-family: var(--abril), serif;
+		color: var(--white-dop);
 		text-align: center;
 		font-size: 9em;
 		margin: 0;
-		text-shadow: -1px 0 $gray, 0 1px $gray, 1px 0 $gray, 0 -1px $gray;
+		text-shadow: -1px 0 var(--gray-shadow), 0 1px var(--gray-shadow), 1px 0 var(--gray-shadow), 0 -1px var(--gray-shadow);
 	}
 	& > h3 {
-		font-family: $body;
+		font-family: var(--lato), sans-serif;
 		font-size: 2em;
 		text-transform: uppercase;
 		text-align: center;
-		color: $gray;
+		color: var(--gray-dop);
 		margin-top: -20px;
 		font-weight: 900;
 	}
@@ -191,19 +183,19 @@ $body: 'Lato', sans-serif;
 }
 
 .btn {
-  background: antiquewhite;
+  background: var(--vintage-bg);
 	border-radius: .4em;
-	border: 1px solid $dark;
+	border: 1px solid var(--black-dop);
   padding: 15px 20px;
   margin: 5px;
-  color: $dark;
-  font-family: $body;
+  color: var(--black-dop);
+  font-family: var(--lato), sans-serif;
   text-transform: uppercase;
   font-size: .6em;
   letter-spacing: 1px;
 
   &:hover {
-    background: $gray;
+    background: var(--gray-bg);
     transition: all .25s ease-in-out;
   }
 }

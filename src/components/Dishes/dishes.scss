@@ -1,12 +1,10 @@
-@use "../../styles/globals/vars" as *;
-
 .recipies {
 	& > * + * {
 		margin-top: .6rem;
 	}
 
 	& h2 {
-		color: $accent;
+		color: var(--orange-text);
 	}
 }
 

@@ -1,4 +1,4 @@
-@use "../../styles/globals/vars" as *;
+@use '../../styles/utils/' as *;
 
 .recipe {
 
@@ -23,18 +23,18 @@
 			}
 
 			& > * span {
-				color: $accent;
+				color: var(--orange-text);
 			}
 		}
 
 		&__title {
-			color: $accent;
+			color: var(--orange-text);
 		}
 
 		&__type {
-			font-weight: 400;
-			font-size: $fz-16;
-			line-height: $lh-17;
+			font-weight: var(--fw-400);
+			font-size: var(--fz-16);
+			line-height: var(--lh-16);
 			// display: flex;
 			// flex-wrap: wrap;
 		}
@@ -43,15 +43,15 @@
 			margin-top: 2rem;
 
 			& > span {
-				font-size: $fz-22;
-				line-height: $lh-22;
+				font-size: var(--fz-22);
+				line-height: var(--lh-22);
 			}
 
 			& > p {
 				margin-top: .2rem;
 
 				& > a {
-					color: $text-blue;
+					color: var(--blue-text);
 					text-decoration: underline;
 				}
 			}
@@ -71,9 +71,9 @@
 				display: flex;
 				flex-direction: column;
 
-				border: 1px solid $gray;
+				border: 1px solid var(--gray-border);
 
-				background-color: antiquewhite;
+				background-color: var(--vintage-border);
 				border-radius: .4em;
 			}
 
@@ -84,15 +84,18 @@
 			}
 
 			& > li {
-				color: $text-black;
-				font-size: $fz-17;
-				line-height: $lh-17;
+				color: var(--black-text);
+				font-size: var(--fz-17);
+				line-height: var(--lh-17);
 			}
 		}
 
 		&__img {
 			border-radius: .7em;
-			border: 1px solid rgb(179, 163, 142);
+			--orange-h: 34;
+			--orange-s: 20%;
+			--orange-l: 63%;
+			border: 1px solid toBaseColor("orange");
 			width: 35rem;
 
 			&--m {
@@ -108,20 +111,20 @@
 
 		& > button {
 			cursor: pointer;
-			background-color: #fff;
-			color: $text-black;
+			background-color: var(--white-dop);
+			color: var(--black-text);
 
-			border: 1px solid $gray;
+			border: 1px solid var(--gray-border);
 			border-radius: .4em;
 
 			padding: .4em .8em;
 			transition: all .15s ease-in-out;
 		}
 		& > button.active {
-			background-color: $text-color;
-			color: $accent;
-			border-color: $accent;
-			box-shadow: 2px 4px 15px 0px rgba(18,101,226,0.37);
+			background-color: var(--black-text);
+			color: var(--orange-text);
+			border-color: var(--orange-border);
+			box-shadow: 2px 4px 15px 0px var(--blue-shadow);
 		}
 	}
 }

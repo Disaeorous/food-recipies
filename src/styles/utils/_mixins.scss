@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+@use '../layouts/' as *;
+
+/* --------------- *
+**  Media-Querys  **
+* ---------------- */
+@mixin media($breakpoint) {
+
+	// Get the breakpoint value.
+	$mediaQuery: map.get($breakpoints, $breakpoint);
+	
+	@if (not $mediaQuery) {
+		@error 'No query could be retrieved from `#{$breakpoint}` map. '
+		+ 'Please make sure it is defined in `$breakpoints` map.';
+  }
+
+  @media screen and #{ inspect($mediaQuery) } {
+    @content;
+  }
+}
