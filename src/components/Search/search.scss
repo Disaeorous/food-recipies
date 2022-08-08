@@ -1,5 +1,3 @@
-@use "../../styles/globals/vars/" as *;
-
 .search {
 
 	&-input {
@@ -7,16 +5,16 @@
 		border-radius: 0.4em;
     padding: 0.4em 0.8em;
 
-    color: $text-color;
-		background-color: antiquewhite;
+    color: var(--black-text);
+		background-color: var(--vintage-bg);
 
 		transition: 
 			border-color .15s ease-out,
 			box-shadow .15s ease-out;
 
 		&:focus {
-			border-color: $accent;
-			box-shadow: 2px 4px 10px 0px rgba(18,101,226,0.27);
+			border-color: var(--orange-border);
+			box-shadow: 2px 4px 10px 0px var(--blue-shadow);
 		}
 	}
 

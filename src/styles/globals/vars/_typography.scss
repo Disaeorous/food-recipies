@@ -1,19 +1,42 @@
-$roboto: 'Roboto';
-$poppins: 'Poppins';
-$source-serif-pro: 'Source Serif Pro';
+// Your types
+$typography: (
 
-$fz-12: 1.2rem;
-$fz-14: 1.4rem;
-$fz-15: 1.5rem;
-$fz-16: 1.6rem;
-$fz-17: 1.7rem;
-$fz-18: 1.8rem;
-$fz-22: 2.2rem;
+	'font': (
+		roboto: 'Roboto',
+		poppins: 'Poppins',
+		source-serif-pro: 'Source Serif Pro',
+		lato: 'Lato',
+		abril: 'Abril Fatface',
+	),
 
-$lh-12: 1.86;
-$lh-14: 1.79;
-$lh-15: 1.73;
-$lh-16: 1.68;
-$lh-17: 1.61;
-$lh-18: 1.64;
-$lh-22: 1.58;
+	'font-size': (
+		fz-12: 1.2rem,
+		fz-14: 1.4rem,
+		fz-15: 1.5rem,
+		fz-16: 1.6rem,
+		fz-17: 1.7rem,
+		fz-18: 1.8rem,
+		fz-20: 2rem,
+		fz-22: 2.2rem,
+	),
+	
+	'line-height': (
+		lh-12: 1.86,
+		lh-14: 1.79,
+		lh-15: 1.73,
+		lh-16: 1.68,
+		lh-17: 1.61,
+		lh-18: 1.64,
+		lh-20: 1.58,
+		lh-22: 1.53,
+	),
+
+	'font-weight': (
+		fw-100: 100,
+		fw-300: 300,
+		fw-400: 400,
+		fw-700: 700,
+		fw-900: 900,
+	),
+	
+);

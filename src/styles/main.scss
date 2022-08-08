@@ -1,6 +1,7 @@
-@use "globals" as *;
-@use "layouts" as *;
-@use "helpers" as *;
+@use './utils/' as *;
+@use './layouts/' as *;
+@use './globals/' as *;
+@use './helpers/' as *;
 
 .main {
 	display: grid;
@@ -22,7 +23,7 @@
 }
 
 .logo {
-	border: 1px solid $gray;
+	border: 1px solid var(--gray-border);
 	border-radius: .4em;
 	padding: .4em .8em;
 
@@ -34,23 +35,23 @@
 	transition: all .15s ease-in;
 
 	&:hover {
-		background-color: #222;
-		border-color: hsl(18deg, 87%, 51%);
-    box-shadow: 2px 4px 15px 0px rgb(18 101 226 / 37%);
+		background-color: var(--black-bg);
+		border-color: var(--orange-border);
+    box-shadow: 2px 4px 15px 0px var(--blue-shadow);
 
 		& span {
-			color: $text-red;
+			color: var(--red-text);
 		}
 		& svg {
-			fill: $text-red;
+			fill: var(--red-text);
 		}
 	}
 
 	&-brand {
-		font-size: $fz-18;
-		line-height: $lh-18;
+		font-size: var(--fz-18);
+		line-height: var(--lh-18);
 
-		color: $accent;
+		color: var(--orange-text);
 		transition: color .15s ease-in;
 	}
 	&-img {
