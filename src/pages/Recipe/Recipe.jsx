@@ -5,6 +5,7 @@ import { fetchDetails } from '../../services/fetchDetails';
 import { useParams } from 'react-router-dom';
 import RecipeMain from '../../components/Recipe/RecipeMain';
 import RecipeTabs from '../../components/Recipe/RecipeTabs';
+import Skeleton from '../../components/Skeleton';
 
 function Recipe() {
 
@@ -20,13 +21,15 @@ function Recipe() {
 	} 
 	
 	useEffect(() => {
-		recipeData();
+		setTimeout(()=> {
+			recipeData();
+		}, 1000);
 	}, [params.name]);
 
 	return (
 		<>
 			{ loading ? 
-			<h1>Loading</h1>
+			<Skeleton type={"circle"} />
 			: <section className='recipe-details'>
 				
 					<RecipeMain obj={detail} />

@@ -19,7 +19,7 @@ function Carousel( {item, perPage=3, perMove=3, rewind=false} ) {
 		wheelSleep: 2,
 		interval: 6300,
 		gap: '1.4em',
-		pagination: false,
+		pagination: true,
 		flickPower: 900,
 		breakpoints: {
 			640: {

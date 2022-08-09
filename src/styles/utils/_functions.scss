@@ -15,6 +15,6 @@
 // 📝 Input:  toBaseColor( 'red' );
 // ✅ Output: hsl( var(--red-h), var(--red-s), var(--red-l) );
 */
-@function toBaseColor($color) {
-  @return unquote("hsl( var(--#{$color+"-h"}), var(--#{$color+"-s"}), var(--#{$color+"-l"}) )");
+@function toBaseColor($color, $opacity: 1) {
+  @return unquote("hsl( var(--#{$color+"-h"}), var(--#{$color+"-s"}), var(--#{$color+"-l"}), #{$opacity} )");
 }
