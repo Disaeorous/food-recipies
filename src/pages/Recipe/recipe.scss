@@ -54,6 +54,9 @@
 					color: var(--blue-text);
 					text-decoration: underline;
 				}
+				& > a:hover {
+					color: var(--orange-text);
+				}
 			}
 		}
 
@@ -125,6 +128,10 @@
 			color: var(--orange-text);
 			border-color: var(--orange-border);
 			box-shadow: 2px 4px 15px 0px var(--blue-shadow);
+		}
+		& > button:hover {
+			border-color: var(--orange-border);
+			color: var(--orange-text);
 		}
 	}
 }

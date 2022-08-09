@@ -29,21 +29,21 @@
 
 	display: flex;
 	align-items: center;
-	gap: .6rem;
+	gap: .8rem;
 
 	width: fit-content;
 	transition: all .15s ease-in;
 
 	&:hover {
-		background-color: var(--black-bg);
-		border-color: var(--orange-border);
-    box-shadow: 2px 4px 15px 0px var(--blue-shadow);
+		background-color: toBaseColor("black", 0.85);
+		border-color: var(--blue-milk-border);
+    box-shadow: 2px 2px 8px 1px var(--blue-shadow);
 
 		& span {
-			color: var(--red-text);
+			color: var(--blue-base);
 		}
 		& svg {
-			fill: var(--red-text);
+			fill: var(--white-base);
 		}
 	}
 

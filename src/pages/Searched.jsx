@@ -4,6 +4,7 @@ import RecipieCard from '../components/Card/RecipieCard';
 
 import { fetchCuisine } from '../services/fetchCuisine';
 import { useParams } from 'react-router-dom';
+import Skeleton from '../components/Skeleton';
 
 function Searched() {
 
@@ -14,10 +15,14 @@ function Searched() {
 	let params = useParams();
 
 	useEffect(() => {
-		getSearched(params.search);
+		setTimeout(()=> {
+			getSearched(params.search);
+		}, 1000)
 	}, [params.search]);
 
 	const getSearched = async (input) => {
+		setLoading(true);
+		
 		const dataSearch = await fetchCuisine('complexSearch', 'query', input);
 		setSearchedRecipe(dataSearch.results);
 
@@ -33,7 +38,7 @@ function Searched() {
 		<>
 			<section className='grid'>
 					{ loading 
-					? <h1>Loading</h1>
+					? <Skeleton type={"dish"} count={8} />
 					: searchedRecipe.map((item) => {
 						return (
 							<React.Fragment key={item.id}>

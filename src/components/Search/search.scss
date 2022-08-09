@@ -14,7 +14,8 @@
 
 		&:focus {
 			border-color: var(--orange-border);
-			box-shadow: 2px 4px 10px 0px var(--blue-shadow);
+			// box-shadow: 2px 4px 10px 0px var(--blue-shadow);
+			box-shadow: 2px 2px 8px 1px var(--blue-shadow);
 		}
 	}
 
