@@ -12,7 +12,7 @@ function LogIn() {
 		<li className='auth-login'>
 			<button onClick={showModalHandler} className='auth-link' type='button'>Log in</button>
 
-			<Modal isOpen={showModal} closeModal={showModalHandler} >
+			<Modal isOpen={showModal} closeModal={showModalHandler} title="Log in" >
 				<p>Hello. i'm a modal from Login!</p>
 			</Modal>
 		</li>

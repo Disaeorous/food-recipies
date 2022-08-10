@@ -12,8 +12,11 @@ function SignUp() {
 		<li className='auth-signUp'>
 			<button onClick={showModalHandler} className='auth-link' type='button'>sign up</button>
 		
-			<Modal isOpen={showModal} closeModal={showModalHandler} >
-				<p>Hello. i'm a modal from Sign Up!</p>
+			<Modal isOpen={showModal} closeModal={showModalHandler} title="Sign up" >
+				<form>
+					<input type="text" placeholder='Enter your name' />
+					<input type="password" placeholder='Enter your password' />
+				</form>
 			</Modal>
 		</li>
 	)
