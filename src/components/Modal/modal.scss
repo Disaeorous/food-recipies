@@ -4,10 +4,12 @@
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	z-index: 1000;
 
+	// width: calc(100% - 50%);
+	max-width: 100%;
 	padding: 1.2em;
+	
 	border: 1px solid var(--blue-border);
 	border-radius: 0.7rem;
 
@@ -20,8 +22,21 @@
 	align-items: center;
 	gap: 2rem;
 
+	// overflow-y: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	// height: 2rem;
+	// min-height: calc(100% - 50%);
+
+	transform: translate(-50%, -50%);
+
 	&-wrapper {
-		width: 100%;
+		// width: calc(100% - 4rem);
+		width: 56rem;
+		height: 36rem;
+		// overflow-y: auto;
+		// overflow: auto;
 	}
 }
 
@@ -35,6 +50,7 @@
 
 .modal-title {
 	flex: 2;
+	color: var(--blue-milk-text);
 }
 
 .modal-close {

@@ -8,7 +8,6 @@ function Auth() {
 	return (
 		<ul className='auth'>
 			<LogIn />
-			<p className='www'>Under modal</p>
 			<SignUp />
 		</ul>
 	)

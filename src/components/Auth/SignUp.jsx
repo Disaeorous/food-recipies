@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../Modal';
+import FormSignUp from '../Form/FormSignUp';
 
 function SignUp() {
 	const [showModal, setShowModal] = useState(false);
@@ -13,10 +14,7 @@ function SignUp() {
 			<button onClick={showModalHandler} className='auth-link' type='button'>sign up</button>
 		
 			<Modal isOpen={showModal} closeModal={showModalHandler} title="Sign up" >
-				<form>
-					<input type="text" placeholder='Enter your name' />
-					<input type="password" placeholder='Enter your password' />
-				</form>
+				<FormSignUp />
 			</Modal>
 		</li>
 	)
