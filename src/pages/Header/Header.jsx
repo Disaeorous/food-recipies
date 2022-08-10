@@ -1,18 +1,18 @@
 import React from 'react';
-
 import './header.scss';
-import { ImSpoonKnife } from 'react-icons/im';
 
-import { Link } from 'react-router-dom';
+import Logo from '../../components/Logo';
+import Auth from '../../components/Auth';
 
 function Header() {
 	return (
 		<header className='header'>
 			<div className="container">
-				<Link className='logo' to={'/'} >
-					<ImSpoonKnife className='logo-img' />
-					<span className='logo-brand'>Go to home</span>
-				</Link>
+
+				<section className="header-wrapper">
+					<Logo />
+					<Auth />
+				</section>
 			</div>
 		</header>
 	)

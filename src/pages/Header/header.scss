@@ -1,4 +1,9 @@
 .header {
 	padding: 1em 0;
 	background-color: var(--vintage-bg);
+
+	&-wrapper {
+		display: flex;
+		align-items: center;
+	}
 }
