@@ -12,6 +12,7 @@
 	display: flex;
 	flex-direction: column-reverse;
 	flex: 1 1 0;
+	align-self: flex-start;
 }
 
 .auth-form__label {
@@ -55,4 +56,12 @@
 	&:hover {
 		box-shadow: 1px 1px 4px .1rem var(--white-shadow);
 	}
+}
+
+.auth-form__error {
+	font-size: var(--fz-15);
+	line-height: var(--lh-15);
+	margin-top: 1rem;
+
+	color: var(--red-dop);
 }
