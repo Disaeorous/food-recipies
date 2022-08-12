@@ -10,7 +10,7 @@ function Auth() {
 			<LogIn />
 			<SignUp />
 		</ul>
-	)
+	);
 }
 
-export default Auth
+export default Auth;

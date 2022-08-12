@@ -8,7 +8,6 @@ import RecipeTabs from '../../components/Recipe/RecipeTabs';
 import Skeleton from '../../components/Skeleton';
 
 function Recipe() {
-
 	let params = useParams();
 
 	const [detail, setDetail] = useState({});
@@ -18,29 +17,29 @@ function Recipe() {
 		const fetchData = await fetchDetails(params.name);
 		setDetail(fetchData);
 		setLoading(false);
-	} 
-	
+	};
+
 	useEffect(() => {
-		setTimeout(()=> {
+		setTimeout(() => {
 			recipeData();
 		}, 1000);
 	}, [params.name]);
 
 	return (
 		<>
-			{ loading ? 
-			<Skeleton type={"circle"} />
-			: <section className='recipe-details'>
-				
+			{loading ? (
+				<Skeleton type={'circle'} />
+			) : (
+				<section className='recipe-details'>
 					<RecipeMain obj={detail} />
 
 					<div className='recipe-details__info'>
 						<RecipeTabs obj={detail} />
 					</div>
 				</section>
-			}
+			)}
 		</>
-	)
+	);
 }
 
-export default Recipe
+export default Recipe;

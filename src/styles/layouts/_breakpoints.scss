@@ -1,10 +1,26 @@
 $breakpoints: (
-  'xxs':  (max-width: 359px),
-	 'xs':  (min-width: 360px),
-	 'sm':  (min-width: 376px),
-	 'md':  (min-width: 568px),
-	  'd':  (min-width: 667px),
-   'lg':  (min-width: 768px),
-   'xl':  (min-width: 960px),
-  'xxl':  (min-width: 1024px),
+	'xxs': (
+		max-width: 359px,
+	),
+	'xs': (
+		min-width: 360px,
+	),
+	'sm': (
+		min-width: 376px,
+	),
+	'md': (
+		min-width: 568px,
+	),
+	'd': (
+		min-width: 667px,
+	),
+	'lg': (
+		min-width: 768px,
+	),
+	'xl': (
+		min-width: 960px,
+	),
+	'xxl': (
+		min-width: 1024px,
+	),
 );

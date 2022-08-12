@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 
 import RecipieCard from '../components/Card/RecipieCard';
 
@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 import Skeleton from '../components/Skeleton';
 
 function Searched() {
-
 	const [searchedRecipe, setSearchedRecipe] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const warning = useRef(false);
@@ -15,14 +14,14 @@ function Searched() {
 	let params = useParams();
 
 	useEffect(() => {
-		setTimeout(()=> {
+		setTimeout(() => {
 			getSearched(params.search);
-		}, 1000)
+		}, 1000);
 	}, [params.search]);
 
-	const getSearched = async (input) => {
+	const getSearched = async input => {
 		setLoading(true);
-		
+
 		const dataSearch = await fetchCuisine('complexSearch', 'query', input);
 		setSearchedRecipe(dataSearch.results);
 
@@ -32,25 +31,33 @@ function Searched() {
 		}
 
 		setLoading(false);
-	}
+	};
 
 	return (
 		<>
 			<section className='grid'>
-					{ loading 
-					? <Skeleton type={"dish"} count={8} />
-					: searchedRecipe.map((item) => {
+				{loading ? (
+					<Skeleton type={'dish'} count={8} />
+				) : (
+					searchedRecipe.map(item => {
 						return (
 							<React.Fragment key={item.id}>
-								{ warning.current = false }
-								<RecipieCard id={item.id} title={item.title} image={item.image} />
+								{(warning.current = false)}
+								<RecipieCard
+									id={item.id}
+									title={item.title}
+									image={item.image}
+								/>
 							</React.Fragment>
-						)
-					}) }
-					{ warning.current && <h1>Request not found. Try to find something different.</h1> }
-				</section>
+						);
+					})
+				)}
+				{warning.current && (
+					<h1>Request not found. Try to find something different.</h1>
+				)}
+			</section>
 		</>
-	)
+	);
 }
 
-export default Searched
+export default Searched;

@@ -1,5 +1,4 @@
 .categories {
-
 	&-list {
 		display: flex;
 		align-content: center;
@@ -8,7 +7,6 @@
 	}
 
 	&-item {
-
 		&:not(:last-of-type) {
 			margin-right: 2.4rem;
 		}
@@ -19,20 +17,20 @@
 		flex-direction: column-reverse;
 		align-items: center;
 
-		gap: .4rem; 
-		padding: .6em;
+		gap: 0.4rem;
+		padding: 0.6em;
 		border: 1px solid var(--gray-border);
-		border-radius: .6em;
-		
+		border-radius: 0.6em;
+
 		color: var(--black-text);
 		background-color: var(--vintage-bg);
 
 		& > span {
-			transition: color .15s ease-in-out;
+			transition: color 0.15s ease-in-out;
 		}
 		& > svg {
 			fill: var(--black-text);
-			transition: fill .15s ease-in-out;
+			transition: fill 0.15s ease-in-out;
 		}
 
 		&:hover > span,

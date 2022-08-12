@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
 
-import './carousel.scss'
+import './carousel.scss';
 import RecipieCard from '../Card';
 
-function Carousel( {item, perPage=3, perMove=3, rewind=false} ) {
-
+function Carousel({ item, perPage = 3, perMove = 3, rewind = false }) {
 	const splideOptions = {
 		perPage,
 		perMove,
@@ -31,26 +30,26 @@ function Carousel( {item, perPage=3, perMove=3, rewind=false} ) {
 			390: {
 				gap: '0.2em',
 				perPage: 1,
-				perMove: 1
-			}
-		}
-	}
+				perMove: 1,
+			},
+		},
+	};
 
 	return (
-		<Splide
-			options = {
-				splideOptions
-			}
-		>
-			{ item.map((recipe) => {
+		<Splide options={splideOptions}>
+			{item.map(recipe => {
 				return (
 					<SplideSlide key={recipe.id}>
-						<RecipieCard id={recipe.id} title={recipe.title} image={recipe.image} />
+						<RecipieCard
+							id={recipe.id}
+							title={recipe.title}
+							image={recipe.image}
+						/>
 					</SplideSlide>
-				)
-			}) }
+				);
+			})}
 		</Splide>
-	)
+	);
 }
 
-export default Carousel
+export default Carousel;

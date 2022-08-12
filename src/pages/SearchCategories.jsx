@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import Search from '../components/Search';
 import Categories from '../components/Categories';
@@ -9,7 +9,7 @@ function SearchCategories() {
 			<Search />
 			<Categories />
 		</div>
-	)
+	);
 }
 
-export default SearchCategories
+export default SearchCategories;

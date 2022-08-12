@@ -1,11 +1,10 @@
 @use '../../styles/utils/' as *;
 
 .recipe {
-
 	&-details {
 		width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(34rem, 2fr));
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(34rem, 2fr));
 		gap: 5rem;
 
 		&__info {
@@ -18,7 +17,7 @@
 			&--secondary {
 				& h3 > span,
 				& p > span {
-					margin-left: .5rem;
+					margin-left: 0.5rem;
 				}
 			}
 
@@ -48,7 +47,7 @@
 			}
 
 			& > p {
-				margin-top: .2rem;
+				margin-top: 0.2rem;
 
 				& > a {
 					color: var(--blue-text);
@@ -69,7 +68,7 @@
 
 			& > div {
 				width: 45%;
-				padding: .4em 1.2em;
+				padding: 0.4em 1.2em;
 
 				display: flex;
 				flex-direction: column;
@@ -77,7 +76,7 @@
 				border: 1px solid var(--gray-border);
 
 				background-color: var(--vintage-border);
-				border-radius: .4em;
+				border-radius: 0.4em;
 			}
 
 			& > ol {
@@ -94,11 +93,11 @@
 		}
 
 		&__img {
-			border-radius: .7em;
+			border-radius: 0.7em;
 			--orange-h: 34;
 			--orange-s: 20%;
 			--orange-l: 63%;
-			border: 1px solid toBaseColor("orange");
+			border: 1px solid toBaseColor('orange');
 			width: 35rem;
 
 			&--m {
@@ -118,10 +117,10 @@
 			color: var(--black-text);
 
 			border: 1px solid var(--gray-border);
-			border-radius: .4em;
+			border-radius: 0.4em;
 
-			padding: .4em .8em;
-			transition: all .15s ease-in-out;
+			padding: 0.4em 0.8em;
+			transition: all 0.15s ease-in-out;
 		}
 		& > button.active {
 			background-color: var(--black-text);

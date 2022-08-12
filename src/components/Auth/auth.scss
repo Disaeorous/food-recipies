@@ -8,14 +8,14 @@
 }
 
 .auth-link {
-	padding: .4em;
+	padding: 0.4em;
 	border: 1px solid var(--orange-border);
-	border-radius: .4em;
-	background-color: toBaseColor("orange", 0.9);
+	border-radius: 0.4em;
+	background-color: toBaseColor('orange', 0.9);
 
-	transition: box-shadow .15s ease-in;
+	transition: box-shadow 0.15s ease-in;
 
 	&:hover {
-		box-shadow: 1px 1px 8px .2rem var(--blue-shadow);
+		box-shadow: 1px 1px 8px 0.2rem var(--blue-shadow);
 	}
 }

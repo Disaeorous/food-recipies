@@ -2,22 +2,22 @@
 
 .logo {
 	border: 1px solid var(--gray-border);
-	border-radius: .4em;
-	padding: .4em .8em;
+	border-radius: 0.4em;
+	padding: 0.4em 0.8em;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex: 6;
-	gap: .8rem;
+	gap: 0.8rem;
 
 	max-width: 18rem;
-	transition: all .15s ease-in;
+	transition: all 0.15s ease-in;
 
 	&:hover {
-		background-color: toBaseColor("black", 0.85);
+		background-color: toBaseColor('black', 0.85);
 		border-color: var(--blue-milk-border);
-    box-shadow: 2px 2px 8px 1px var(--blue-shadow);
+		box-shadow: 2px 2px 8px 1px var(--blue-shadow);
 
 		& span {
 			color: var(--blue-base);
@@ -32,9 +32,9 @@
 		line-height: var(--lh-18);
 
 		color: var(--orange-text);
-		transition: color .15s ease-in;
+		transition: color 0.15s ease-in;
 	}
 	&-img {
-		transition: fill .15s ease-in;
+		transition: fill 0.15s ease-in;
 	}
 }

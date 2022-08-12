@@ -1,5 +1,4 @@
 .recipies {
-
 	&-item > * + * {
 		margin-top: 1.2rem;
 	}
@@ -9,22 +8,26 @@
 
 		&__link {
 			position: relative;
-			border-radius: .7em;
+			border-radius: 0.7em;
 			transform: scale(0.9);
 			width: 100%;
 
-			transition: transform .15s ease-in-out;
+			transition: transform 0.15s ease-in-out;
 
 			&:hover {
 				transform: scale(1);
 
 				&::after {
-					background-image: linear-gradient(360deg, hsla(0, 0%, 100%, 0), hsl(34deg 100% 66% / 14%));
+					background-image: linear-gradient(
+						360deg,
+						hsla(0, 0%, 100%, 0),
+						hsl(34deg 100% 66% / 14%)
+					);
 				}
 			}
 
 			&::after {
-				content: "";
+				content: '';
 				width: 100%;
 				height: 100%;
 
@@ -32,8 +35,12 @@
 				top: 0;
 				left: 0;
 
-				border-radius: .7em;
-				background-image: linear-gradient(180deg, hsla(0, 0%, 0%, 0.1), hsla(0, 0%, 0%, 0.3));				
+				border-radius: 0.7em;
+				background-image: linear-gradient(
+					180deg,
+					hsla(0, 0%, 0%, 0.1),
+					hsla(0, 0%, 0%, 0.3)
+				);
 			}
 		}
 	}
@@ -45,7 +52,7 @@
 	}
 
 	&-img {
-		border-radius: .7em;
+		border-radius: 0.7em;
 		height: 100%;
 		object-fit: cover;
 	}

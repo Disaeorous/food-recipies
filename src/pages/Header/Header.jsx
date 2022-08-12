@@ -7,15 +7,14 @@ import Auth from '../../components/Auth';
 function Header() {
 	return (
 		<header className='header'>
-			<div className="container">
-
-				<section className="header-wrapper">
+			<div className='container'>
+				<section className='header-wrapper'>
 					<Logo />
 					<Auth />
 				</section>
 			</div>
 		</header>
-	)
+	);
 }
 
-export default Header
+export default Header;

@@ -7,7 +7,7 @@ function Home() {
 		<>
 			<Dishes />
 		</>
-	)
+	);
 }
 
-export default Home
+export default Home;
