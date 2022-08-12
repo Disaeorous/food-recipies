@@ -5,13 +5,12 @@ import Carousel from '../../Carousel';
 import PropTypes from 'prop-types';
 import Skeleton from '../../Skeleton';
 
-function Popular( {title='Popular'} ) {
-	
+function Popular({ title = 'Popular' }) {
 	const [popular, setPopular] = useState([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		setTimeout(()=> {
+		setTimeout(() => {
 			getPopular();
 		}, 1000);
 	}, []);
@@ -19,7 +18,7 @@ function Popular( {title='Popular'} ) {
 	const getPopular = async () => {
 		const check = localStorage.getItem('popular');
 		setLoading(false);
-		
+
 		try {
 			setLoading(true);
 
@@ -30,7 +29,7 @@ function Popular( {title='Popular'} ) {
 				const dataRecipe = await fetchRecipes('random', 9, 'dessert');
 				setPopular(dataRecipe);
 
-				localStorage.setItem("popular", JSON.stringify(dataRecipe));
+				localStorage.setItem('popular', JSON.stringify(dataRecipe));
 				setLoading(false);
 
 				return dataRecipe;
@@ -40,26 +39,23 @@ function Popular( {title='Popular'} ) {
 			setLoading(false);
 		}
 		setLoading(false);
-	}
+	};
 
 	return (
 		<article className='recipies grid-row-1'>
 			<h2>{title} recipies</h2>
-			
-			{ !loading ? 
-				<Carousel
-					item={popular}
-					perPage={3}
-					perMove={3}
-					rewind={true} />
-				: <Skeleton type={"dish"} count={3} /> 
-			}
+
+			{!loading ? (
+				<Carousel item={popular} perPage={3} perMove={3} rewind={true} />
+			) : (
+				<Skeleton type={'dish'} count={3} />
+			)}
 		</article>
-	)
+	);
 }
 
 Popular.propTypes = {
 	title: PropTypes.string,
-}
+};
 
-export default Popular
+export default Popular;

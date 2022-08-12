@@ -1,6 +1,5 @@
 // Your types
 $typography: (
-
 	'font': (
 		roboto: 'Roboto',
 		poppins: 'Poppins',
@@ -8,7 +7,6 @@ $typography: (
 		lato: 'Lato',
 		abril: 'Abril Fatface',
 	),
-
 	'font-size': (
 		fz-12: 1.2rem,
 		fz-14: 1.4rem,
@@ -19,7 +17,6 @@ $typography: (
 		fz-20: 2rem,
 		fz-22: 2.2rem,
 	),
-	
 	'line-height': (
 		lh-12: 1.86,
 		lh-14: 1.79,
@@ -30,7 +27,6 @@ $typography: (
 		lh-20: 1.58,
 		lh-22: 1.53,
 	),
-
 	'font-weight': (
 		fw-100: 100,
 		fw-300: 300,
@@ -38,5 +34,4 @@ $typography: (
 		fw-700: 700,
 		fw-900: 900,
 	),
-	
 );

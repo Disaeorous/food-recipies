@@ -20,25 +20,26 @@
 	padding-bottom: 1.2rem;
 
 	color: var(--white-text);
-	transition: color .15s ease-in
+	transition: color 0.15s ease-in;
 }
 
 .auth-form__input {
-	padding: .4em .6em;
-	border-radius: .2em;
+	padding: 0.4em 0.6em;
+	border-radius: 0.2em;
 	border-color: var(--white-border);
 	color: var(--white-text);
 
-	transition: border-color .15s ease-in, color .15s ease-in, box-shadow .15s ease-in;
-	
+	transition: border-color 0.15s ease-in, color 0.15s ease-in,
+		box-shadow 0.15s ease-in;
+
 	&:hover {
-		box-shadow: 1px 1px 4px .1rem var(--white-shadow);
+		box-shadow: 1px 1px 4px 0.1rem var(--white-shadow);
 	}
 
 	&:focus {
 		border-color: var(--blue-milk-border);
 		color: var(--blue-milk-text);
-		box-shadow: 1px 1px 4px .1rem var(--blue-milk-shadow);
+		box-shadow: 1px 1px 4px 0.1rem var(--blue-milk-shadow);
 	}
 	&:focus ~ label {
 		color: var(--blue-milk-text);
@@ -50,11 +51,11 @@
 	border-color: var(--blue-milk-border);
 
 	&:focus {
-		box-shadow: 1px 1px 4px .1rem var(--blue-milk-shadow);
-		background-color: toBaseColor("extraordinary-dark", 0.9);
+		box-shadow: 1px 1px 4px 0.1rem var(--blue-milk-shadow);
+		background-color: toBaseColor('extraordinary-dark', 0.9);
 	}
 	&:hover {
-		box-shadow: 1px 1px 4px .1rem var(--white-shadow);
+		box-shadow: 1px 1px 4px 0.1rem var(--white-shadow);
 	}
 }
 

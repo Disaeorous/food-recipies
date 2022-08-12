@@ -9,24 +9,27 @@ function SignUp() {
 
 	const showModalHandler = () => {
 		return setShowModal(prev => !prev);
-	}
+	};
 
 	const formSubmitHandler = () => {
-		return setFormSubmited(prev => prev = true);
-	}
+		return setFormSubmited(prev => (prev = true));
+	};
 
 	return (
 		<li className='auth-signUp'>
-			<button onClick={showModalHandler} className='auth-link' type='button'>sign up</button>
-		
-			<Modal isOpen={showModal} closeModal={showModalHandler} title="Sign up" >
-				{ formSubmited ? 
-					<FormSuccess title="Authorization is success!" /> 
-					: <FormSignUp isSubmited={formSubmitHandler} />
-				}
+			<button onClick={showModalHandler} className='auth-link' type='button'>
+				sign up
+			</button>
+
+			<Modal isOpen={showModal} closeModal={showModalHandler} title='Sign up'>
+				{formSubmited ? (
+					<FormSuccess title='Authorization is success!' />
+				) : (
+					<FormSignUp isSubmited={formSubmitHandler} />
+				)}
 			</Modal>
 		</li>
-	)
+	);
 }
 
-export default SignUp
+export default SignUp;

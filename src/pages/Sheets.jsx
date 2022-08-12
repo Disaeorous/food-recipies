@@ -7,21 +7,18 @@ import Searched from './Searched';
 import Recipe from './Recipe';
 import NotFound from './NotFound';
 
-import { 
-	Routes,
-	Route 
-} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 export const Sheets = () => {
 	return (
-		<main className="main container">
+		<main className='main container'>
 			<Routes>
-				<Route path='/' element={ <Home /> } />
-				<Route path='/cuisine/:type' element={ <Cuisine /> } />
-				<Route path='/search/:search' element={ <Searched /> } />
-				<Route path='/recipe/:name' element={ <Recipe /> } />
-				<Route path='*' element={ <NotFound /> } />
+				<Route path='/' element={<Home />} />
+				<Route path='/cuisine/:type' element={<Cuisine />} />
+				<Route path='/search/:search' element={<Searched />} />
+				<Route path='/recipe/:name' element={<Recipe />} />
+				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</main>
-	)
-}
+	);
+};

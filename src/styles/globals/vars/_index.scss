@@ -10,22 +10,17 @@
 $root: map-collect($typography, $color-scheme);
 
 :root {
-
 	@each $name, $prop in $root {
-		
 		// Our map has his keys?
 		// @debug map.has-key($root, "font") --> true
 		// @debug map.has-key($root, "fonK") --> false
 		@if map.has-key($root, $name) {
-			
 			// Render all our variables
 			@each $key, $value in $prop {
 				--#{$key}: #{$value};
 			}
-
 		} @else {
 			@error 'Something wrong in: #{ $root } or #{ $name }';
-		};
-	};
-
+		}
+	}
 }

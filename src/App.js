@@ -6,13 +6,13 @@ import SearchCategories from './pages/SearchCategories';
 import Header from './pages/Header';
 
 function App() {
-  return (
-    <Router>
+	return (
+		<Router>
 			<Header />
 			<SearchCategories />
 			<Pages />
-    </Router>
-  );
+		</Router>
+	);
 }
 
 export default App;

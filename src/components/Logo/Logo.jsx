@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 function Logo() {
 	return (
-		<Link className='logo' to={'/'} >
+		<Link className='logo' to={'/'}>
 			<ImSpoonKnife className='logo-img' />
 			<span className='logo-brand'>Go to home</span>
 		</Link>
-	)
+	);
 }
 
-export default Logo
+export default Logo;

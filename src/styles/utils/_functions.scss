@@ -2,13 +2,13 @@
 
 // Combine all our maps to one
 @function map-collect($maps...) {
-  $collection: ();
+	$collection: ();
 
-  @each $map in $maps {
+	@each $map in $maps {
 		$collection: map.merge($collection, $map);
-  }
+	}
 
-  @return $collection;
+	@return $collection;
 }
 
 /*
@@ -16,5 +16,8 @@
 // ✅ Output: hsl( var(--red-h), var(--red-s), var(--red-l) );
 */
 @function toBaseColor($color, $opacity: 1) {
-  @return unquote("hsl( var(--#{$color+"-h"}), var(--#{$color+"-s"}), var(--#{$color+"-l"}), #{$opacity} )");
+	@return unquote(
+		'hsl( var(--#{$color+'-h '}), var(--#{$color+'-s '}), var(--#{$color+'-l
+			'}), #{$opacity} )'
+	);
 }

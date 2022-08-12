@@ -9,12 +9,12 @@
 	// width: calc(100% - 50%);
 	max-width: 100%;
 	padding: 1.2em;
-	
+
 	border: 1px solid var(--blue-border);
 	border-radius: 0.7rem;
 
 	color: var(--white-text);
-	background-color: toBaseColor("black", 0.95);
+	background-color: toBaseColor('black', 0.95);
 	box-shadow: 1px 1px 8px 1px var(--blue-shadow);
 
 	display: flex;
@@ -56,15 +56,15 @@
 .modal-close {
 	position: relative;
 
-  width: 3.2rem;
-  height: 3.2rem;
+	width: 3.2rem;
+	height: 3.2rem;
 
 	border: 1px solid var(--vintage-border);
 	border-radius: 0.2em;
 	margin-left: 2rem;
 	align-self: flex-start;
 
-	transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
 	&::before,
 	&::after {
