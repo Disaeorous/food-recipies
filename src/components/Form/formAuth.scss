@@ -1,11 +1,16 @@
 @use '../../styles/utils/' as *;
+@use '../../styles/layouts/' as *;
 
 .auth-form {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
 	gap: 2.5rem;
 	padding-bottom: 3rem;
+
+	@include media('d') {
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	}
 }
 
 .auth-form__field {
@@ -65,4 +70,9 @@
 	margin-top: 1rem;
 
 	color: var(--red-dop);
+}
+
+.auth-form__action {
+	display: flex;
+	align-items: flex-end
 }

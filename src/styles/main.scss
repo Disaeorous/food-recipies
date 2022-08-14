@@ -9,8 +9,23 @@
 	justify-items: center;
 
 	width: 100%;
-	grid-template-columns: minmax(250px, 1fr);
+	grid-template-columns: minmax(25rem, 1fr);
 	gap: 4rem;
+}
+
+.grid {
+	display: grid;
+	justify-items: center;
+	align-items: start;
+
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+	gap: 1.2rem;
+	
+	@include media('md') {
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		background-color: var(--vintage-base);
+	}
 }
 
 #root {

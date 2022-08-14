@@ -42,7 +42,7 @@ function Veggie({ title = 'Vegetarian' }) {
 	};
 
 	return (
-		<article className='recipies grid-row-2'>
+		<article className='recipies veggie grid-row-2'>
 			<h2>{title} recipies</h2>
 			{/* { !loading && <h1>Loading</h1> } */}
 

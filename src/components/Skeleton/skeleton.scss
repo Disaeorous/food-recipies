@@ -1,14 +1,32 @@
+@use '../../styles/utils/' as *;
+
+.popular > .skeleton {
+	& > .skeleton-wrapper {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
+}
+
+.veggie > .skeleton {
+	& > .skeleton-wrapper {
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	}
+}
+
 .skeleton {
 	width: 100%;
 
 	&-wrapper {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
 		
 		width: 100%;
 		gap: 2rem;
 
 		animation: skeleton 1.15s ease-in-out infinite alternate;
+
+		@include media('md') {
+			grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		}
 	}
 
 	&-dish {

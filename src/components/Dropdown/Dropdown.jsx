@@ -129,8 +129,14 @@ export const Dropdown = () => {
 					>
 						Messages
 					</DropdownItem>
-					<DropdownItem navigateTo={'/hot/'}>Hot</DropdownItem>
-					<DropdownItem navigateTo={'/recently/'}>Recently</DropdownItem>
+					<DropdownItem navigateTo={'messages/hot/'}>Hot</DropdownItem>
+					<DropdownItem navigateTo={'messages/recently/'}>
+						Recently
+					</DropdownItem>
+					<DropdownItem navigateTo={'messages/important/'}>
+						Important
+					</DropdownItem>
+					<DropdownItem navigateTo={'messages/events/'}>Events</DropdownItem>
 				</div>
 			</CSSTransition>
 
@@ -149,10 +155,10 @@ export const Dropdown = () => {
 					>
 						Settings
 					</DropdownItem>
-					<DropdownItem navigateTo={'/settings/?:preferences/'}>
+					<DropdownItem navigateTo={'/settings/preferences/'}>
 						Preferences
 					</DropdownItem>
-					<DropdownItem navigateTo={'/settings/?:bio/'}>BIO</DropdownItem>
+					<DropdownItem navigateTo={'/settings/bio/'}>BIO</DropdownItem>
 				</div>
 			</CSSTransition>
 		</div>
