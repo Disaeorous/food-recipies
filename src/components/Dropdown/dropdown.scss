@@ -1,0 +1,89 @@
+@use '../../styles/utils/' as *;
+
+.dropdown {
+	display: flex;
+	flex-direction: column;
+	min-width: 15rem;
+	position: absolute;
+	background: var(--blue-base);
+	border: 1px solid var(--blue-border);
+	border-radius: 0.4em;
+	overflow: hidden;
+	transform: translate(-45%, 5%);
+	transition: height 0.25s ease-in-out;
+	z-index: 10;
+}
+
+.dropdown-item {
+	display: flex;
+	align-items: center;
+	padding: 1.2rem;
+	width: 100%;
+
+	&:hover {
+		background-color: toBaseColor("black", 0.2);
+	}
+}
+
+.icon-left,
+.icon-right {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	& *,
+	& *  path {
+		cursor: pointer;
+	}
+}
+
+.icon-left {
+	margin-right: .6rem;
+}
+.icon-right {
+	margin-left: auto;
+}
+
+.menu {
+	width: 100%;
+}
+
+.menu-primary {
+
+	&-enter {
+		position: absolute;
+		transform: translateX(-110%);
+
+		&-active {
+			transform: translateX(0%);
+			transition: transform .15s ease;
+		}
+	}
+	&-exit {
+		position: absolute;
+
+		&-active {
+			transform: translateX(-110%);
+			transition: transform .15s ease;
+		}
+	}
+}
+
+.menu-secondary {
+
+	&-enter {
+		transform: translateX(110%);
+
+		&-active {
+			transform: translateX(0%);
+			transition: transform .15s ease;
+		}
+	}
+	&-exit {
+
+		&-active {
+			transform: translateX(110%);
+			transition: transform .15s ease;
+		}
+	}
+}

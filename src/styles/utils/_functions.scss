@@ -17,7 +17,6 @@
 */
 @function toBaseColor($color, $opacity: 1) {
 	@return unquote(
-		'hsl( var(--#{$color+'-h '}), var(--#{$color+'-s '}), var(--#{$color+'-l
-			'}), #{$opacity} )'
+		'hsl( var(--#{$color+'-h'}), var(--#{$color+'-s'}), var(--#{$color+'-l'}), #{$opacity} )'
 	);
 }
