@@ -1,0 +1,38 @@
+@use '../../styles/utils/' as *;
+
+.user {
+
+}
+
+.user-avatar {
+	width: 2.4rem;
+	height: 2.4rem;
+	padding: 1em;
+	border: 1px solid var(--orange-border);
+	border-radius: 50%;
+	
+	cursor: pointer;
+	background-color: var(--orange-bg);
+	
+	position: relative;
+	transition: box-shadow 0.15s ease-out, background-color 0.15s ease-in;
+
+	& > svg {
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+		cursor: pointer;
+
+		& > path {
+			cursor: inherit;
+		}
+	}
+
+	&:hover,
+	&:focus-visible {
+		background-color: toBaseColor("orange", 0.9);
+		box-shadow: 1px 1px 8px 0 var(--blue-shadow);
+	}
+}

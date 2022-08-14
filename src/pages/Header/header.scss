@@ -1,9 +1,28 @@
 .header {
 	padding: 1em 0;
 	background-color: var(--vintage-bg);
+}
 
-	&-wrapper {
+.header-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.header-nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	flex: 4 1;
+	gap: 1.2rem;
+
+	&__list {
 		display: flex;
-		align-items: center;
+    gap: 1.2rem;
+    align-items: center;
+	}
+
+	&__item {
+		position: relative;
 	}
 }

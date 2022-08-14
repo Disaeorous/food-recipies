@@ -81,8 +81,7 @@ $color-scheme: (
 		blue-milk-h: 215,
 		blue-milk-s: 100%,
 		blue-milk-l: 93%,
-		blue-milk-base:
-			hsl(var(--blue-milk-h), var(--blue-milk-s), var(--blue-milk-l)),
+		blue-milk-base: hsl(var(--blue-milk-h), var(--blue-milk-s), var(--blue-milk-l)),
 		blue-milk-bg: hsl(213, 92%, 85%),
 		blue-milk-text: hsl(208, 86%, 70%),
 		blue-milk-border: hsl(213, 74%, 76%),
@@ -104,8 +103,7 @@ $color-scheme: (
 		turquoise-h: 191,
 		turquoise-s: 53%,
 		turquoise-l: 52%,
-		turquoise-base:
-			hsl(var(--turquoise-h), var(--turquoise-s), var(--turquoise-l)),
+		turquoise-base: hsl(var(--turquoise-h), var(--turquoise-s), var(--turquoise-l)),
 		turquoise-bg: hsl(180, 63%, 41%),
 		turquoise-text: hsl(181, 99%, 41%),
 		turquoise-border: hsl(196, 68%, 56%),
@@ -149,8 +147,7 @@ $color-scheme: (
 		brown-milk-h: 33,
 		brown-milk-s: 68%,
 		brown-milk-l: 72%,
-		brown-milk-base:
-			hsl(var(--brown-milk-h), var(--brown-milk-s), var(--brown-milk-l)),
+		brown-milk-base: hsl(var(--brown-milk-h), var(--brown-milk-s), var(--brown-milk-l)),
 		brown-milk-bg: hsl(22, 24%, 57%),
 		brown-milk-text: hsl(34, 36%, 61%),
 		brown-milk-border: hsl(32, 38%, 60%),

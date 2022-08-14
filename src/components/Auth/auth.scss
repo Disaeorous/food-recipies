@@ -15,7 +15,8 @@
 
 	transition: box-shadow 0.15s ease-in;
 
-	&:hover {
+	&:hover,
+	&:focus-visible {
 		box-shadow: 1px 1px 8px 0.2rem var(--blue-shadow);
 	}
 }
