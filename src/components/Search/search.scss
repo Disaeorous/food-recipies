@@ -1,47 +1,100 @@
+@use '../../styles/utils/' as *;
+
 .search {
+}
 
-	&-input {
-		width: 100%;
-		border-radius: 0.4em;
-    padding: 0.4em 0.8em;
+.search-input {
+	width: 100%;
+	border-radius: 0.4em;
+	padding: 0.4em 0.6em;
 
-    color: var(--black-text);
-		background-color: var(--vintage-bg);
+	color: var(--black-text);
+	background-color: var(--vintage-bg);
 
-		transition: 
-			border-color .15s ease-out,
-			box-shadow .15s ease-out;
+	transition: 
+	border-color .15s ease-out,
+	box-shadow .15s ease-out;
 
-		&:focus {
-			border-color: var(--orange-border);
-			// box-shadow: 2px 4px 10px 0px var(--blue-shadow);
-			box-shadow: 2px 2px 8px 1px var(--blue-shadow);
+	&:focus {
+		border-color: var(--orange-border);
+		box-shadow: 2px 2px 8px 1px var(--blue-shadow);
+	}
+
+	@include media('xxs') {
+		font-size: var(--fz-14);
+		line-height: var(--lh-14);
+	}
+	@include media('xs') {
+		font-size: var(--fz-15);
+		line-height: var(--lh-15);
+	}
+	@include media('sm') {
+		padding: 0.6em 0.8em;
+	}
+	@include media('md') {
+		font-size: var(--fz-16);
+		line-height: var(--lh-16);
+	}
+	@include media('lg') {
+		font-size: var(--fz-17);
+		line-height: var(--lh-17);
+	}
+}
+
+.search-form {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	// width: 24rem;
+	margin: 0 auto;
+
+	//xxs
+	max-width: calc(100% - 1rem);
+
+	@include media('xs') {
+		width: 24rem;
+	}
+	@include media('sm') {
+		width: 32rem;
+	}
+	@include media('md') {
+		width: 37rem;
+	}
+}
+
+.search-label {
+	position: absolute;
+
+	display: flex;
+	right: 0.8rem;
+
+	cursor: pointer;
+	padding: 0.6rem;
+
+	& > svg {
+		width: 1.2rem;
+		height: 1.2rem;
+	}
+
+	@include media('sm') {
+		& > svg {
+			width: 1.4rem;
+			height: 1.4rem;
 		}
 	}
-
-	&-form {
-		position: relative;
-		display: flex;
-    align-items: center;
-
-		width: 37rem;
-		margin: 0 auto;
+	@include media('md') {
+		& > svg {
+			width: 1.8rem;
+			height: 1.8rem;
+		}
 	}
+}
 
-	&-label {
-		position: absolute;
-
-    display: flex;
-    right: 0.8rem;
-  
-    cursor: pointer;
-    padding: 0.6rem;
-	}
-
-	&-categories {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		margin-top: 2rem;
-	}
+.search-categories {
+	display: flex;
+	flex-direction: column;
+	gap: .8rem;
+	margin-top: 2rem;
+	width: 100%;
 }

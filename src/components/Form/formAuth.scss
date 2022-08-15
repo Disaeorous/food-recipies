@@ -3,12 +3,21 @@
 
 .auth-form {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-
-	gap: 2.5rem;
+	grid-template-columns: repeat(1, minmax(15rem, 1fr));
+	gap: 1.5rem;
 	padding-bottom: 3rem;
 
+	@include media('md') {
+		gap: 2.3rem;
+		padding-bottom: 1.2rem;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+	}
 	@include media('d') {
+		gap: 2.5rem;
+		// height: 100%;
+		// max-height: calc(100% - 20%);
+
 		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	}
 }
@@ -22,10 +31,15 @@
 
 .auth-form__label {
 	width: fit-content;
-	padding-bottom: 1.2rem;
+	padding-bottom: .8rem;
 
 	color: var(--white-text);
 	transition: color 0.15s ease-in;
+
+	@include media('md') {
+		padding-bottom: 1.2rem;
+		max-height: calc(100% - 20%);
+	}
 }
 
 .auth-form__input {
@@ -74,5 +88,10 @@
 
 .auth-form__action {
 	display: flex;
-	align-items: flex-end
+	align-items: flex-end;
+
+	margin-top: 1.2rem;
+	@include media('md') {
+		margin-top: 0;
+	}
 }

@@ -1,50 +1,100 @@
+@use '../../styles/utils/' as *;
+
 .categories {
-	&-list {
-		display: flex;
-		align-content: center;
-		justify-content: center;
-		align-items: center;
+}
+
+.categories-list {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.categories-item {
+	margin-top: 1.2rem;
+	margin-inline: 0.6rem;
+
+	flex: 0.15 1 20%;
+
+	&:not(:last-of-type) {
+	
+	}
+	@include media('sm') {
+		flex: 0.25 1 15%;
+	}
+	@include media('md') {
+		flex: 0 1 10rem;
+	}
+}
+
+.categories-link {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+
+	gap: 0.4rem;
+	padding: 0.8em;
+
+	border: 1px solid var(--gray-border);
+	border-radius: 0.6em;
+
+	color: var(--black-text);
+	background-color: var(--vintage-bg);
+
+	& > span {
+		display: none;
+		transition: color 0.15s ease-in-out;
+	}
+	& > svg {
+		fill: var(--black-text);
+		transition: fill 0.15s ease-in-out;
 	}
 
-	&-item {
-		&:not(:last-of-type) {
-			margin-right: 2.4rem;
-		}
+	&:hover > span,
+	&.active > span {
+		color: var(--orange-text);
+	}
+	&:hover > svg,
+	&.active > svg {
+		fill: var(--orange-text);
 	}
 
-	&-link {
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: center;
+	&.active {
+		box-shadow: 2px 4px 15px 0px var(--blue-shadow);
+		border-color: var(--orange-border);
+	}
 
-		gap: 0.4rem;
+	@include media('xs') {
+		// padding: 0.4em;
+	}
+	@include media('sm') {
 		padding: 0.6em;
-		border: 1px solid var(--gray-border);
-		border-radius: 0.6em;
-
-		color: var(--black-text);
-		background-color: var(--vintage-bg);
 
 		& > span {
-			transition: color 0.15s ease-in-out;
+			font-size: var(--fz-15);
+			line-height: var(--lh-15);
+			display: inline;
 		}
-		& > svg {
-			fill: var(--black-text);
-			transition: fill 0.15s ease-in-out;
-		}
+	}
+	@include media('md') {
+		padding: 0.8em;
 
-		&:hover > span,
-		&.active > span {
-			color: var(--orange-text);
+		& > span {
+			font-size: var(--fz-16);
+			line-height: var(--lh-16);
 		}
-		&:hover > svg,
-		&.active > svg {
-			fill: var(--orange-text);
-		}
+	}
+}
 
-		&.active {
-			box-shadow: 2px 4px 15px 0px var(--blue-shadow);
-			border-color: var(--orange-border);
-		}
+.categories-title {
+	color: var(--orange-text);
+	font-size: var(--fz-18);
+	line-height: var(--lh-18);
+	margin-top: 1.2rem;
+	text-align: center;
+
+	@include media('sm') {
+		display: none;
 	}
 }

@@ -9,8 +9,13 @@
 	justify-items: center;
 
 	width: 100%;
-	grid-template-columns: minmax(25rem, 1fr);
-	gap: 4rem;
+	grid-template-columns: minmax(15rem, 1fr);
+	gap: 2rem;
+
+	@include media('md') {
+		grid-template-columns: minmax(25rem, 1fr);
+		gap: 4rem;
+	}
 }
 
 .grid {
@@ -19,12 +24,14 @@
 	align-items: start;
 
 	width: 100%;
-	grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 	gap: 1.2rem;
 	
+	@include media('sm') {
+		grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+	}
 	@include media('md') {
 		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-		background-color: var(--vintage-base);
 	}
 }
 
