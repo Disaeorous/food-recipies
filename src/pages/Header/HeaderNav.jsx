@@ -8,6 +8,10 @@ export const HeaderNav = ({ children }) => {
 	);
 };
 
-export const HeaderNavItems = ({ component }) => {
-	return <li className='header-nav__item'>{component}</li>;
+export const HeaderNavItems = ({ component, ...props }) => {
+	return (
+		<li {...props} className='header-nav__item'>
+			{component}
+		</li>
+	);
 };

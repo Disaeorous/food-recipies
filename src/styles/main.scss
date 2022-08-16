@@ -28,9 +28,14 @@
 	gap: 1.2rem;
 	
 	@include media('sm') {
-		grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+		// grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(17.4rem, 1fr));
 	}
 	@include media('md') {
+		// grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+	}
+	@include media('d') {
 		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	}
 }

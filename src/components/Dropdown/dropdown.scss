@@ -17,11 +17,24 @@
 .dropdown-item {
 	display: flex;
 	align-items: center;
-	padding: 1.2rem;
+
+	padding: 1rem 1.2rem;
 	width: 100%;
+
+	font-size: var(--fz-15);
+	line-height: var(--lh-15);
 
 	&:hover {
 		background-color: toBaseColor("black", 0.2);
+	}
+
+	@include media('md') {
+		font-size: var(--fz-16);
+		line-height: var(--lh-16);
+	}
+	@include media('lg') {
+		font-size: var(--fz-17);
+		line-height: var(--lh-17);
 	}
 }
 

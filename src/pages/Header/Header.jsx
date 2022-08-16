@@ -5,8 +5,8 @@ import Logo from '../../components/Logo';
 import Auth from '../../components/Auth';
 import User from '../../components/User';
 import { HeaderNav as Nav, HeaderNavItems as Item } from './HeaderNav';
-
-import { CSSTransition } from 'react-transition-group';
+import Hamburger from '../../components/Hamburger/Hamburger';
+import HamburgerMenu from '../../components/Hamburger/HamburgerMenu';
 
 function Header() {
 	return (
@@ -15,8 +15,10 @@ function Header() {
 				<section className='header-wrapper'>
 					<Logo />
 					<Nav>
-						<Item component={<Auth />} />
-						<Item component={<User />} />
+						{/* <Item component={<Auth />} /> */}
+						{/* <Item component={<User />} /> */}
+						<Item component={<Hamburger />} />
+						<Item component={<HamburgerMenu />} />
 					</Nav>
 				</section>
 			</div>
