@@ -27,7 +27,7 @@ function Carousel({ item, perPage = 3, perMove = 3, rewind = false }) {
 				perPage: 2,
 				perMove: 2,
 			},
-			390: {
+			383: {
 				gap: '0.2em',
 				perPage: 1,
 				perMove: 1,

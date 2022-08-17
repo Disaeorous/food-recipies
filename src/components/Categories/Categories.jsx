@@ -10,6 +10,7 @@ function Categories() {
 	return (
 		<section className='categories'>
 			<nav className='categories-nav'>
+				<h2 className='categories-title'>Categories</h2>
 				<ul className='categories-list'>
 					<li className='categories-item'>
 						<NavLink className='categories-link' to={'/cuisine/Italian'}>

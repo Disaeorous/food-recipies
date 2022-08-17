@@ -1,136 +1,259 @@
 @use '../../styles/utils/' as *;
 
 .recipe {
-	&-details {
+}
+
+.recipe-details {
+	width: 100%;
+	display: grid;
+	gap: 5rem;
+
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 2fr));
+
+	@include media('sm') {
+		grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr));
+	}
+	@include media('d') {
+		gap: 3.5rem;
+		// grid-template-columns: repeat(auto-fit, minmax(34rem, 2fr));
+	}
+
+	&__info {
 		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(34rem, 2fr));
-		gap: 5rem;
 
-		&__info {
-			width: 100%;
+		& > * + * {
+			margin-top: 1rem;
+		}
 
-			& > * + * {
-				margin-top: 1rem;
-			}
+		&--secondary {
+			//sm
+			font-size: var(--fz-15);
+			line-height: var(--lh-15);
 
-			&--secondary {
-				& h3 > span,
-				& p > span {
-					margin-left: 0.5rem;
+			& h3, & p {
+				@include media('d') {
+					font-size: var(--fz-17);
+					line-height: var(--lh-17);
 				}
 			}
+			& h3 > span,
+			& p > span {
+				margin-left: 0.5rem;
+				font-size: var(--fz-15);
+				line-height: var(--lh-15);
 
-			& > * span {
-				color: var(--orange-text);
+				@include media('d') {
+					font-size: var(--fz-16);
+					line-height: var(--lh-16);
+				}
 			}
 		}
 
-		&__title {
+		& > * span {
 			color: var(--orange-text);
 		}
 
-		&__type {
-			font-weight: var(--fw-400);
-			font-size: var(--fz-16);
-			line-height: var(--lh-16);
-			// display: flex;
-			// flex-wrap: wrap;
+		& > img {
+			object-fit: cover;
+			max-height: 25rem;
+			width: 45rem;
+			cursor: default !important;
 		}
+	}
 
-		&__summary {
+	&__title {
+		color: var(--orange-text);
+
+		// sm
+		font-size: var(--fz-18);
+    line-height: var(--lh-18);
+
+		@include media('d') {
+			font-size: var(--fz-22);
+    line-height: var(--lh-22);
+		}
+	}
+
+	&__type {
+		font-weight: var(--fw-400);
+		font-size: var(--fz-16);
+		line-height: var(--lh-16);
+		// display: flex;
+		// flex-wrap: wrap;
+	}
+
+	&__summary {
+		//sm
+		margin-top: 1.5rem;
+
+		@include media('d') {
 			margin-top: 2rem;
-
-			& > span {
-				font-size: var(--fz-22);
-				line-height: var(--lh-22);
-			}
-
-			& > p {
-				margin-top: 0.2rem;
-
-				& > a {
-					color: var(--blue-text);
-					text-decoration: underline;
-				}
-				& > a:hover {
-					color: var(--orange-text);
-				}
-			}
 		}
 
-		&__instructions,
-		&__ingredients {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 2rem;
-			margin-top: 2rem;
-
-			& > div {
-				width: 45%;
-				padding: 0.4em 1.2em;
-
-				display: flex;
-				flex-direction: column;
-
-				border: 1px solid var(--gray-border);
-
-				background-color: var(--vintage-border);
-				border-radius: 0.4em;
-			}
-
-			& > ol {
-				display: flex;
-				flex-direction: column;
-				gap: 1.2rem;
-			}
-
-			& > li {
-				color: var(--black-text);
-				font-size: var(--fz-17);
-				line-height: var(--lh-17);
-			}
+		& > span {
+			font-size: var(--fz-22);
+			line-height: var(--lh-22);
 		}
 
-		&__img {
-			border-radius: 0.7em;
-			--orange-h: 34;
-			--orange-s: 20%;
-			--orange-l: 63%;
-			border: 1px solid toBaseColor('orange');
-			width: 35rem;
+		& > p {
+			margin-top: 0.2rem;
 
-			&--m {
-				width: calc(100% - 6.5rem);
+			//sm
+			font-size: var(--fz-15);
+			line-height: var(--lh-15);
+
+			@include media('d') {
+				font-size: var(--fz-16);
+				line-height: var(--lh-16);
+			}
+
+			& > a {
+				color: var(--blue-text);
+				text-decoration: underline;
+			}
+			& > a:hover {
+				color: var(--orange-text);
 			}
 		}
 	}
 
-	&-cta {
+	&__instructions,
+	&__ingredients {
 		display: flex;
-		align-items: center;
-		gap: 2rem;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		margin-top: 2rem;
 
-		& > button {
-			cursor: pointer;
-			background-color: var(--white-dop);
-			color: var(--black-text);
+		& > div {
+			width: 100%;
+			padding: 0.4em 1.2em;
+
+			display: flex;
+			flex-direction: column;
 
 			border: 1px solid var(--gray-border);
+
+			background-color: var(--vintage-border);
 			border-radius: 0.4em;
 
-			padding: 0.4em 0.8em;
-			transition: all 0.15s ease-in-out;
+			font-size: var(--fz-15);
+			line-height: var(--lh-15);
+
+			@include media('sm') {
+				width: 47%;
+				padding: 1rem;
+			}
+			@include media('xl') {
+				width: 30%;
+			}
 		}
-		& > button.active {
-			background-color: var(--black-text);
-			color: var(--orange-text);
-			border-color: var(--orange-border);
-			box-shadow: 2px 4px 15px 0px var(--blue-shadow);
+
+		& > ol {
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
 		}
-		& > button:hover {
-			border-color: var(--orange-border);
-			color: var(--orange-text);
+
+		& > li {
+			color: var(--black-text);
+			font-size: var(--fz-17);
+			line-height: var(--lh-17);
 		}
+
+		//sm
+		font-size: var(--fz-15);
+		line-height: var(--lh-15);
+	}
+
+	&__instructions {
+		@include media('md') {
+			font-size: var(--fz-16);
+		line-height: var(--lh-16);
+		}
+		@include media('lg') {
+			font-size: var(--fz-17);
+		line-height: var(--lh-17);
+		}
+	}
+
+	&__ingredients {
+		@include media('sm') {
+			justify-content: center;
+		}
+		@include media('lg') {
+			gap: 1.5rem;
+		}
+	}
+
+	&__ingredients > div > img {
+			width: 100%;
+			max-width: 15rem;
+			margin-inline: auto;
+			margin-block: 1rem;
+	}
+	&__ingredients > div > h4 {
+		text-align: center;
+		font-size: var(--fz-14);
+		line-height: var(--lh-14);
+	}
+	&__ingredients > div > p {
+		@include media('lg') {
+			font-size: var(--fz-16);
+		line-height: var(--lh-16);
+		}
+	}
+	
+	&__img {
+		border-radius: 0.7em;
+		--orange-h: 34;
+		--orange-s: 20%;
+		--orange-l: 63%;
+		border: 1px solid toBaseColor('orange');
+		// width: 35rem;
+
+		&--m {
+			width: calc(100% - 6.5rem);
+		}
+
+		//sm
+		width: 100%;
+	}
+}
+
+.recipe-cta {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+
+	@include media('sm') {
+		gap: 2rem;
+	}
+
+	& > button {
+		cursor: pointer;
+		background-color: var(--white-dop);
+		color: var(--black-text);
+
+		border: 1px solid var(--gray-border);
+		border-radius: 0.4em;
+
+		transition: all 0.15s ease-in-out;
+
+		flex-basis: 50%;
+    padding-block: .4em;
+
+		@include media('sm') {
+			padding: 0.6em 0.8em;
+		}
+	}
+	& > button.active {
+		background-color: var(--black-text);
+		color: var(--orange-text);
+		border-color: var(--orange-border);
+		box-shadow: 2px 4px 15px 0px var(--blue-shadow);
+	}
+	& > button:hover {
+		border-color: var(--orange-border);
+		color: var(--orange-text);
 	}
 }

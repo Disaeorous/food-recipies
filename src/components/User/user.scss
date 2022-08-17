@@ -1,7 +1,6 @@
 @use '../../styles/utils/' as *;
 
 .user {
-
 }
 
 .user-avatar {
@@ -17,6 +16,12 @@
 	position: relative;
 	transition: box-shadow 0.15s ease-out, background-color 0.15s ease-in;
 
+	display: none;
+
+	@include media('md') {
+		display: block;
+	}
+
 	& > svg {
 		position: absolute;
     top: 50%;
@@ -29,6 +34,19 @@
 			cursor: inherit;
 		}
 	}
+
+	// &.active::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	bottom: -1.6rem;
+	// 	left: 50%;
+	// 	transform: translateX(-50%);
+	// 	width: 0;
+	// 	height: 0;
+	// 	border-style: solid;
+	// 	border-width: 0 .6rem 1.2rem .6rem;
+	// 	border-color: transparent transparent var(--blue-base) transparent;
+	// }
 
 	&:hover,
 	&:focus-visible {

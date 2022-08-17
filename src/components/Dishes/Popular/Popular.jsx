@@ -42,7 +42,7 @@ function Popular({ title = 'Popular' }) {
 	};
 
 	return (
-		<article className='recipies grid-row-1'>
+		<article className='recipies popular grid-row-1'>
 			<h2>{title} recipies</h2>
 
 			{!loading ? (

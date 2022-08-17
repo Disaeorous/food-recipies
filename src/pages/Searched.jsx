@@ -53,7 +53,9 @@ function Searched() {
 					})
 				)}
 				{warning.current && (
-					<h1>Request not found. Try to find something different.</h1>
+					<h1 style={{ textAlign: 'center' }}>
+						Request not found. Try to find something different.
+					</h1>
 				)}
 			</section>
 		</>

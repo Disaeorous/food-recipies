@@ -8,11 +8,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex: 6;
+	// flex: 6;
 	gap: 0.8rem;
 
-	max-width: 18rem;
+	// max-width: 18rem;
 	transition: all 0.15s ease-in;
+
+	flex: 1 0 0;
+	max-width: 5rem;
+
+	& > span {
+		display: none;
+	}
 
 	&:hover {
 		background-color: toBaseColor('black', 0.85);
@@ -27,14 +34,38 @@
 		}
 	}
 
-	&-brand {
+	@include media('sm') {
+		flex: 3 0 0;
+		max-width: 14rem;
+		padding: 0.6em;
+
+		& span {
+			display: inline;
+		}
+	}
+	@include media('md') {
+		// flex: 1 0 10%;
+		max-width: 16rem;
+	}
+}
+
+.logo-brand {
+	font-size: var(--fz-15);
+	line-height: var(--lh-15);
+
+	color: var(--orange-text);
+	transition: color 0.15s ease-in;
+
+	@include media('md') {
+		font-size: var(--fz-16);
+		line-height: var(--lh-16);
+	}
+	@include media('d') {
 		font-size: var(--fz-18);
 		line-height: var(--lh-18);
+	}
+}
 
-		color: var(--orange-text);
-		transition: color 0.15s ease-in;
-	}
-	&-img {
-		transition: fill 0.15s ease-in;
-	}
+.logo-img {
+	transition: fill 0.15s ease-in;
 }
