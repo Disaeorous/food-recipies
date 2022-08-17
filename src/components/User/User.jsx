@@ -4,7 +4,7 @@ import './user.scss';
 import { FaRegUser } from 'react-icons/fa';
 import { Dropdown } from '../Dropdown/Dropdown';
 
-function User() {
+function User({ icon, ...props }) {
 	const [isOpen, setIsOpen] = useState(false);
 	// const refActive = useRef();
 
@@ -22,8 +22,9 @@ function User() {
 				onClick={openHandler}
 				className='user-avatar'
 				type='button'
+				{...props}
 			>
-				<FaRegUser />
+				<FaRegUser style={icon} />
 			</button>
 
 			{isOpen && <Dropdown />}

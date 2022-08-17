@@ -3,7 +3,7 @@ import Modal from '../Modal';
 import FormSignUp from '../Form/FormSignUp';
 import FormSuccess from '../Form/FormSuccess';
 
-function SignUp() {
+function SignUp({ liStyle, ...props }) {
 	const [showModal, setShowModal] = useState(false);
 	const [formSubmited, setFormSubmited] = useState(false);
 
@@ -16,8 +16,13 @@ function SignUp() {
 	};
 
 	return (
-		<li className='auth-signUp'>
-			<button onClick={showModalHandler} className='auth-link' type='button'>
+		<li style={liStyle} className='auth-signUp'>
+			<button
+				{...props}
+				onClick={showModalHandler}
+				className='auth-link'
+				type='button'
+			>
 				sign up
 			</button>
 

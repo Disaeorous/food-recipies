@@ -1,6 +1,14 @@
 .header {
 	padding: 1em 0;
+	margin-top: 0;
 	background-color: var(--vintage-bg);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	max-height: 8rem;
 }
 
 .header-wrapper {

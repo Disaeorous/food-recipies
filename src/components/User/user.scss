@@ -1,7 +1,6 @@
 @use '../../styles/utils/' as *;
 
 .user {
-
 }
 
 .user-avatar {
@@ -16,6 +15,12 @@
 	
 	position: relative;
 	transition: box-shadow 0.15s ease-out, background-color 0.15s ease-in;
+
+	display: none;
+
+	@include media('md') {
+		display: block;
+	}
 
 	& > svg {
 		position: absolute;

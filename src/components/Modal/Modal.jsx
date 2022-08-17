@@ -22,7 +22,7 @@ function Modal({ isOpen, children, closeModal, title }) {
 				<div className='modal-wrapper'>{children}</div>
 			</div>
 		</>,
-		document.getElementById('portal')
+		document.getElementById('portal2')
 	);
 }
 

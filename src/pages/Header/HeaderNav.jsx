@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const HeaderNav = ({ children }) => {
+export const HeaderNav = ({ children, navStyles, ...props }) => {
 	return (
-		<nav className='header-nav'>
-			<ul className='header-nav__list'>{children}</ul>
+		<nav style={navStyles} className='header-nav'>
+			<ul {...props} className='header-nav__list'>
+				{children}
+			</ul>
 		</nav>
 	);
 };

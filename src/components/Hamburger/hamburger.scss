@@ -1,3 +1,5 @@
+@use '../../styles/utils/' as *;
+
 .hamburger {
 	position: relative;
 
@@ -35,6 +37,10 @@
 		top: 0;
     -ms-transform: rotate(0);
     transform: rotate(90deg);
+	}
+
+	@include media('md') {
+		display: none;
 	}
 }
 
@@ -87,7 +93,7 @@
 	position: fixed;
 	right: 0;
 	top: 0;
-	z-index: 11000;
+	z-index: 1000;
 
 	font-size: 1rem;
 	
@@ -98,7 +104,20 @@
 	overflow-y: auto;
 	background-color: var(--extraordinary-dark-bg);
 
+	-ms-transform: translate(8rem, 100%);
+	transform: translate(100%, 8rem);
+  border: 1px solid var(--extraordinary-dark-border);
 	transition: transform .2s ease-in-out;
-	-ms-transform: translate(calc(-100% - 1em),0);
-	// transform: translate(calc(-100% - 1em),0);
+
+	&.active {
+		transform: translate(0, 8rem);
+		
+		@include media('md') {
+			transform: translate(100%, 8rem);
+		}
+	}
+
+	@include media('md') {
+		transform: translate(100%, 8rem);
+	}
 }

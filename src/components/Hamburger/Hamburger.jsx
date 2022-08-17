@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './hamburger.scss';
 
-function Hamburger() {
-	const [active, setActive] = useState(false);
+import HamburgerMenu from './HamburgerMenu';
 
-	const activeHandler = () => {
-		return setActive(prevState => !prevState);
-	};
-
+function Hamburger({ isOpen, closeModal, cb, ...props }) {
 	return (
-		<button
-			onClick={activeHandler}
-			className={active ? 'hamburger active' : 'hamburger'}
-			type='button'
-		>
-			<span className='hamburger-line'></span>
-		</button>
+		<>
+			<button
+				onClick={cb}
+				className={isOpen ? 'hamburger active' : 'hamburger'}
+				type='button'
+			>
+				<span className='hamburger-line'></span>
+			</button>
+
+			<HamburgerMenu
+				onClick={e => e.stopPropagation()}
+				isOpen={true}
+				closeModal={cb}
+				className={isOpen ? 'hamburger-menu active' : 'hamburger-menu'}
+			/>
+		</>
 	);
 }
 
