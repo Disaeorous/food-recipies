@@ -42,7 +42,7 @@ import { CSSTransition } from 'react-transition-group';
 // 	);
 // };
 
-export const Dropdown = () => {
+export const Dropdown = ({ isActive, customize, ...props }) => {
 	const [activeMenu, setActiveMenu] = useState('main'); // messages, settings
 	const [menuHeight, setMenuHeight] = useState(null);
 
@@ -94,73 +94,79 @@ export const Dropdown = () => {
 	}
 
 	return (
-		<div className='dropdown' style={{ height: menuHeight }}>
-			<CSSTransition
-				in={activeMenu === 'main'}
-				unmountOnExit
-				timeout={450}
-				onEnter={calcHeight}
-				classNames='menu-primary'
+		<>
+			<div
+				{...props}
+				className={isActive ? 'dropdown active' : 'dropdown'}
+				style={{ height: menuHeight }}
 			>
-				<div className='menu'>
-					<DropdownItem navigateTo={'/settings/'}>My profile</DropdownItem>
-					<DropdownItem iconRight={<RiArrowRightSLine />} goToMenu='messages'>
-						Messages
-					</DropdownItem>
-					<DropdownItem iconRight={<RiArrowRightSLine />} goToMenu='settings'>
-						Settings
-					</DropdownItem>
-					<DropdownItem navigateTo={'/'}>logout</DropdownItem>
-				</div>
-			</CSSTransition>
+				<CSSTransition
+					in={activeMenu === 'main'}
+					unmountOnExit
+					timeout={450}
+					onEnter={calcHeight}
+					classNames='menu-primary'
+				>
+					<div className='menu'>
+						<DropdownItem navigateTo={'/settings/'}>My profile</DropdownItem>
+						<DropdownItem iconRight={<RiArrowRightSLine />} goToMenu='messages'>
+							Messages
+						</DropdownItem>
+						<DropdownItem iconRight={<RiArrowRightSLine />} goToMenu='settings'>
+							Settings
+						</DropdownItem>
+						<DropdownItem navigateTo={'/'}>logout</DropdownItem>
+					</div>
+				</CSSTransition>
 
-			<CSSTransition
-				in={activeMenu === 'messages'}
-				unmountOnExit
-				timeout={450}
-				onEnter={calcHeight}
-				classNames='menu-secondary'
-			>
-				<div className='menu'>
-					<DropdownItem
-						styles={linkActiveStyles}
-						iconLeft={<RiArrowLeftSLine />}
-						goToMenu='main'
-					>
-						Messages
-					</DropdownItem>
-					<DropdownItem navigateTo={'messages/hot/'}>Hot</DropdownItem>
-					<DropdownItem navigateTo={'messages/recently/'}>
-						Recently
-					</DropdownItem>
-					<DropdownItem navigateTo={'messages/important/'}>
-						Important
-					</DropdownItem>
-					<DropdownItem navigateTo={'messages/events/'}>Events</DropdownItem>
-				</div>
-			</CSSTransition>
+				<CSSTransition
+					in={activeMenu === 'messages'}
+					unmountOnExit
+					timeout={450}
+					onEnter={calcHeight}
+					classNames='menu-secondary'
+				>
+					<div className='menu'>
+						<DropdownItem
+							styles={linkActiveStyles}
+							iconLeft={<RiArrowLeftSLine />}
+							goToMenu='main'
+						>
+							Messages
+						</DropdownItem>
+						<DropdownItem navigateTo={'messages/hot/'}>Hot</DropdownItem>
+						<DropdownItem navigateTo={'messages/recently/'}>
+							Recently
+						</DropdownItem>
+						<DropdownItem navigateTo={'messages/important/'}>
+							Important
+						</DropdownItem>
+						<DropdownItem navigateTo={'messages/events/'}>Events</DropdownItem>
+					</div>
+				</CSSTransition>
 
-			<CSSTransition
-				in={activeMenu === 'settings'}
-				unmountOnExit
-				timeout={450}
-				onEnter={calcHeight}
-				classNames='menu-secondary'
-			>
-				<div className='menu'>
-					<DropdownItem
-						styles={linkActiveStyles}
-						iconLeft={<RiArrowLeftSLine />}
-						goToMenu='main'
-					>
-						Settings
-					</DropdownItem>
-					<DropdownItem navigateTo={'/settings/preferences/'}>
-						Preferences
-					</DropdownItem>
-					<DropdownItem navigateTo={'/settings/bio/'}>BIO</DropdownItem>
-				</div>
-			</CSSTransition>
-		</div>
+				<CSSTransition
+					in={activeMenu === 'settings'}
+					unmountOnExit
+					timeout={450}
+					onEnter={calcHeight}
+					classNames='menu-secondary'
+				>
+					<div className='menu'>
+						<DropdownItem
+							styles={linkActiveStyles}
+							iconLeft={<RiArrowLeftSLine />}
+							goToMenu='main'
+						>
+							Settings
+						</DropdownItem>
+						<DropdownItem navigateTo={'/settings/preferences/'}>
+							Preferences
+						</DropdownItem>
+						<DropdownItem navigateTo={'/settings/bio/'}>BIO</DropdownItem>
+					</div>
+				</CSSTransition>
+			</div>
+		</>
 	);
 };

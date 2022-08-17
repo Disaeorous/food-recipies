@@ -48,7 +48,7 @@ function Popular({ title = 'Popular' }) {
 			{!loading ? (
 				<Carousel item={popular} perPage={3} perMove={3} rewind={true} />
 			) : (
-				<Skeleton type={'dish'} count={3} />
+				<Skeleton type={'dish'} count={4} />
 			)}
 		</article>
 	);

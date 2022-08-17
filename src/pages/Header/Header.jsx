@@ -10,6 +10,7 @@ import Hamburger from '../../components/Hamburger/Hamburger';
 
 function Header() {
 	const [active, setActive] = useState(false);
+	const [activeUser, setActiveUser] = useState(false);
 	const activeRef = useRef(active);
 	const isBlock = useMediaQuery('(min-width: 568px)');
 
@@ -32,7 +33,7 @@ function Header() {
 						<Logo onClick={(activeRef.current = closeHandler)} />
 						<Nav>
 							<Item component={<Auth />} />
-							<Item component={<User />} />
+							<Item component={<User isActive={true} media={isBlock} />} />
 							<Item
 								component={<Hamburger isOpen={active} cb={activeHandler} />}
 							/>

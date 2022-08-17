@@ -1,5 +1,6 @@
 import React from 'react';
 import User from '../../components/User';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import {
 	HeaderNav as Nav,
@@ -9,6 +10,8 @@ import LogIn from '../Auth/LogIn';
 import SignUp from '../Auth/SignUp';
 
 function HamburgerMenu({ isOpen, closeModal, ...props }) {
+	const isBlock = useMediaQuery('(min-width: 568px)');
+
 	if (!isOpen) return null;
 
 	const buttonStyles = {
@@ -29,6 +32,7 @@ function HamburgerMenu({ isOpen, closeModal, ...props }) {
 					style={{ alignSelf: 'flex-end' }}
 					component={
 						<User
+							media={!isBlock}
 							style={{ width: '3.5rem', height: '3.5rem', display: 'block' }}
 							icon={{ width: '1.6rem', height: '1.6rem' }}
 						/>
